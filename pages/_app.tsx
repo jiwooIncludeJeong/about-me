@@ -1,8 +1,11 @@
-import '@styles/globals.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { GlobalStyles } from '@styles/global-styles';
+import { Normalize } from 'styled-normalize';
+import Layout from '@components/Layout';
+import { RecoilRoot } from 'recoil';
 
-function MyApp({ Component, pageProps }: AppProps) {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
@@ -10,9 +13,15 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="description" content="about-INCLUDE" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Component {...pageProps} />
+      <Layout>
+        <RecoilRoot>
+          <Normalize />
+          <GlobalStyles />
+          <Component {...pageProps} />
+        </RecoilRoot>
+      </Layout>
     </>
   );
-}
+};
 
 export default MyApp;
