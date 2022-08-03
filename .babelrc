@@ -17,6 +17,7 @@
           "@enums/*": ["./enums/*"],
           "@interfaces/*": ["./interfaces/*"],
           "@constants/*": ["./constants/*"],
+          "@recoils/*": ["./recoils/*"],
           "@styles/*": ["./styles/*"]
         },
         "extensions": [".js", ".jsx", ".ts", ".tsx"]

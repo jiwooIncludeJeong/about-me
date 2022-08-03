@@ -13,13 +13,13 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <meta name="description" content="about-INCLUDE" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Layout>
-        <RecoilRoot>
+      <RecoilRoot>
+        <Layout>
           <Normalize />
           <GlobalStyles />
           <Component {...pageProps} />
-        </RecoilRoot>
-      </Layout>
+        </Layout>
+      </RecoilRoot>
     </>
   );
 };

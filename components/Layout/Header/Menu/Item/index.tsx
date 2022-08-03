@@ -14,7 +14,7 @@ const Item: React.FC<Props> = props => {
   const { title, onClick, isSelected } = props;
   return (
     <Wrapper>
-      <Typo fontType={'KR/Heading/XS/Black'} color={Color.black}>
+      <Typo fontType={'KR/Body/L/Medium'} color={Color.black}>
         {title}
       </Typo>
     </Wrapper>

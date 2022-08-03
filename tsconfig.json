@@ -26,6 +26,7 @@
       "@enums/*": ["./enums/*"],
       "@interfaces/*": ["./interfaces/*"],
       "@constants/*": ["./constants/*"],
+      "@recoils/*": ["./recoils/*"],
       "@styles/*": [
         "./styles/*"
       ]
