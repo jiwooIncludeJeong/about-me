@@ -57,7 +57,7 @@ export const Body = styled.div<{
 export const Row = styled.div<{
   reverse?: boolean;
   wrap?: boolean;
-  alignItems?: 'center' | 'flex-end' | 'unset';
+  alignItems?: 'center' | 'flex-end' | 'unset' | 'flex-start';
   justifyContent?:
     | 'unset'
     | 'space-between'

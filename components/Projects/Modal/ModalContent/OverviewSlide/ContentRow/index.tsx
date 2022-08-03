@@ -7,12 +7,13 @@ import Typo from '@components/UI/Typo/Typo';
 interface Props {
   render: () => React.ReactNode;
   title: string;
+  alignItems?: 'flex-start' | 'center' | 'flex-end' | 'unset';
 }
 
 const ContentRow: React.FC<Props> = props => {
-  const { title, render } = props;
+  const { title, render, alignItems } = props;
   return (
-    <Wrapper>
+    <Wrapper alignItems={alignItems ?? 'center'}>
       <Title>
         <Typo fontType={'EN/Body/L/Bold'} color={DarkColor.black}>
           {title}
@@ -23,7 +24,6 @@ const ContentRow: React.FC<Props> = props => {
   );
 };
 const Wrapper = styled(Row)`
-  align-items: center;
   width: unset;
   margin-bottom: 12px;
 
@@ -34,6 +34,7 @@ const Wrapper = styled(Row)`
 const Title = styled(Row)`
   width: unset;
   margin-right: 30px;
+  min-width: 80px;
   > p {
     color: ${({ theme }) => theme.color.black};
   }

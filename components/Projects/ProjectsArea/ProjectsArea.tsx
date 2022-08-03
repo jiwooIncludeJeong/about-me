@@ -17,7 +17,11 @@ const ProjectsArea: React.FC<Props> = props => {
       subTitle: 'AI 기반 개인 맞춤 식단 구성 및 커머스 서비스 웹뷰 앱 프로젝트',
       detail: {
         id: 0,
-        content: 'content입니다',
+        content:
+          'React-Native-WebView를 통해 기존의 웹 프로덕트를 웹뷰 앱으로 구현하였습니다.\n' +
+          '웹과 앱 사이의 이벤트 기반 시스템을 구현하였습니다.\n' +
+          '또한 FCM, Link 시스템 구현을 통해 다른 팀에서 앱푸시, CRM 메시지 등을 Flexible하게 사용할 수 있게 하여 업무의 생산성을 높였습니다.\n',
+        link: 'https://velog.io/@jt_include_rw/series/React-Native-WebView',
       },
       duration: '2022.06 ~ NOW',
       iconImage: '',
@@ -36,7 +40,7 @@ const ProjectsArea: React.FC<Props> = props => {
         id: 0,
         content: 'content입니다',
       },
-      duration: '2022.06 ~ NOW',
+      duration: '2021.11 ~ NOW',
       iconImage: '',
       link: 'https://shipdan.me/',
       tech: [
@@ -55,7 +59,7 @@ const ProjectsArea: React.FC<Props> = props => {
         id: 0,
         content: 'content입니다',
       },
-      duration: '2022.06 ~ NOW',
+      duration: '2022.05 ~ NOW',
       iconImage: '',
       link: '',
       tech: [{ id: 0, name: 'React-Native' }],
@@ -72,7 +76,7 @@ const ProjectsArea: React.FC<Props> = props => {
         id: 0,
         content: 'content입니다',
       },
-      duration: '2022.06 ~ NOW',
+      duration: '2021.02 ~ 2022.01',
       iconImage: '',
       link: '',
       tech: [{ id: 0, name: 'React-Native' }],
@@ -89,7 +93,9 @@ const ProjectsArea: React.FC<Props> = props => {
         id: 0,
         content: 'content입니다',
       },
-      duration: '2022.06 ~ NOW',
+      github:
+        'https://github.com/jiwooIncludeJeong/Subway_Service_for_VisuallyImpaired/tree/master',
+      duration: '2021.06 ~ 2021.08',
       iconImage: '',
       link: '',
       tech: [{ id: 0, name: 'React-Native' }],
@@ -105,9 +111,10 @@ const ProjectsArea: React.FC<Props> = props => {
         id: 0,
         content: 'content입니다',
       },
-      duration: '2022.06 ~ NOW',
+      github: 'https://github.com/jiwooIncludeJeong/ladder-game-svelte',
+      duration: '2021.12 ~ 2021.12',
       iconImage: '',
-      link: '',
+      link: 'https://bunkerkidsdraw.netlify.app/',
       tech: [{ id: 0, name: 'React-Native' }],
     },
     {
@@ -122,10 +129,11 @@ const ProjectsArea: React.FC<Props> = props => {
         id: 0,
         content: 'content입니다',
       },
-      duration: '2022.06 ~ NOW',
+      github: 'https://github.com/jiwooIncludeJeong/JustLiftWeb',
+      duration: '2021.01 ~ 2021.01',
       iconImage: '',
       link: '',
-      tech: [{ id: 0, name: 'React-Native' }],
+      tech: [{ id: 0, name: 'React' }],
     },
   ];
 

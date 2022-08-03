@@ -1,20 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Btn } from '@styles/default-styles';
-import { ShareIcon } from '@assets/icons';
+import { GithubIcon } from '@assets/icons';
 import Link from 'next/link';
 
 interface Props {
   link: string;
 }
 
-const LinkItem: React.FC<Props> = props => {
+const GitHubItem: React.FC<Props> = props => {
   const { link } = props;
   return (
     <Link href={link} passHref={true}>
       <a target={'_blank'}>
         <Button>
-          <ShareIcon width={32} height={32} />
+          <GithubIcon width={32} height={32} />
         </Button>
       </a>
     </Link>
@@ -32,4 +32,4 @@ const Button = styled(Btn)`
     }
   }
 `;
-export default LinkItem;
+export default GitHubItem;

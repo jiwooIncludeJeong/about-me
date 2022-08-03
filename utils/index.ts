@@ -5,3 +5,6 @@ export const objectToArray = (obj: Record<string, unknown>) => {
     return [];
   }
 };
+export const stringToStringArray = (str: string) => {
+  return str.split(/\n/g);
+};
