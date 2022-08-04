@@ -3,6 +3,10 @@ import styled, { css } from 'styled-components';
 
 interface Props {
   fontType:
+    | 'MG/Heading/L/Bold'
+    | 'MG/Heading/L/Regular'
+    | 'MG/Heading/S/Bold'
+    | 'MG/Heading/S/Regular'
     | 'KR/Heading/XL/Black'
     | 'KR/Heading/L/Bold'
     | 'KR/Heading/M/Bold'
@@ -43,25 +47,9 @@ const Typo: React.FC<Props> = props => {
   } = props;
 
   switch (fontType) {
-    case 'KR/Heading/XL/Black':
+    case 'MG/Heading/L/Bold':
       return (
-        <Korean
-          id={fontType}
-          underline={underline}
-          spacing={0}
-          fontWeight={900}
-          lineThrough={lineThrough}
-          size={40}
-          center={center}
-          height={48}
-          color={color}
-        >
-          {children}
-        </Korean>
-      );
-    case 'KR/Heading/L/Bold':
-      return (
-        <Korean
+        <Magazine
           id={fontType}
           underline={underline}
           spacing={0}
@@ -73,11 +61,91 @@ const Typo: React.FC<Props> = props => {
           color={color}
         >
           {children}
-        </Korean>
+        </Magazine>
+      );
+    case 'MG/Heading/L/Regular':
+      return (
+        <Magazine
+          id={fontType}
+          underline={underline}
+          spacing={0}
+          fontWeight={500}
+          lineThrough={lineThrough}
+          size={36}
+          center={center}
+          height={47}
+          color={color}
+        >
+          {children}
+        </Magazine>
+      );
+    case 'MG/Heading/S/Bold':
+      return (
+        <Magazine
+          id={fontType}
+          underline={underline}
+          spacing={0}
+          fontWeight={700}
+          lineThrough={lineThrough}
+          size={24}
+          center={center}
+          height={34}
+          color={color}
+        >
+          {children}
+        </Magazine>
+      );
+    case 'MG/Heading/S/Regular':
+      return (
+        <Magazine
+          id={fontType}
+          underline={underline}
+          spacing={0}
+          fontWeight={400}
+          lineThrough={lineThrough}
+          size={24}
+          center={center}
+          height={34}
+          color={color}
+        >
+          {children}
+        </Magazine>
+      );
+    case 'KR/Heading/XL/Black':
+      return (
+        <English
+          id={fontType}
+          underline={underline}
+          spacing={0}
+          fontWeight={900}
+          lineThrough={lineThrough}
+          size={40}
+          center={center}
+          height={48}
+          color={color}
+        >
+          {children}
+        </English>
+      );
+    case 'KR/Heading/L/Bold':
+      return (
+        <English
+          id={fontType}
+          underline={underline}
+          spacing={0}
+          fontWeight={700}
+          lineThrough={lineThrough}
+          size={36}
+          center={center}
+          height={47}
+          color={color}
+        >
+          {children}
+        </English>
       );
     case 'KR/Heading/M/Bold':
       return (
-        <Korean
+        <English
           id={fontType}
           underline={underline}
           spacing={0}
@@ -89,11 +157,11 @@ const Typo: React.FC<Props> = props => {
           color={color}
         >
           {children}
-        </Korean>
+        </English>
       );
     case 'KR/Heading/S/Black':
       return (
-        <Korean
+        <English
           id={fontType}
           underline={underline}
           spacing={0}
@@ -105,11 +173,11 @@ const Typo: React.FC<Props> = props => {
           color={color}
         >
           {children}
-        </Korean>
+        </English>
       );
     case 'KR/Heading/S/Bold':
       return (
-        <Korean
+        <English
           id={fontType}
           underline={underline}
           spacing={0}
@@ -121,11 +189,11 @@ const Typo: React.FC<Props> = props => {
           color={color}
         >
           {children}
-        </Korean>
+        </English>
       );
     case 'KR/Heading/XS/Black':
       return (
-        <Korean
+        <English
           id={fontType}
           underline={underline}
           spacing={0}
@@ -137,11 +205,11 @@ const Typo: React.FC<Props> = props => {
           color={color}
         >
           {children}
-        </Korean>
+        </English>
       );
     case 'KR/Heading/XS/Bold':
       return (
-        <Korean
+        <English
           id={fontType}
           underline={underline}
           spacing={0}
@@ -153,11 +221,11 @@ const Typo: React.FC<Props> = props => {
           color={color}
         >
           {children}
-        </Korean>
+        </English>
       );
     case 'KR/Body/L/Bold':
       return (
-        <Korean
+        <English
           id={fontType}
           underline={underline}
           spacing={-0.005}
@@ -169,11 +237,11 @@ const Typo: React.FC<Props> = props => {
           color={color}
         >
           {children}
-        </Korean>
+        </English>
       );
     case 'KR/Body/L/Medium':
       return (
-        <Korean
+        <English
           id={fontType}
           underline={underline}
           spacing={-0.005}
@@ -185,11 +253,11 @@ const Typo: React.FC<Props> = props => {
           color={color}
         >
           {children}
-        </Korean>
+        </English>
       );
     case 'KR/Body/M/Bold':
       return (
-        <Korean
+        <English
           id={fontType}
           underline={underline}
           spacing={0}
@@ -201,11 +269,11 @@ const Typo: React.FC<Props> = props => {
           color={color}
         >
           {children}
-        </Korean>
+        </English>
       );
     case 'KR/Body/M/Regular':
       return (
-        <Korean
+        <English
           id={fontType}
           underline={underline}
           spacing={0}
@@ -217,11 +285,11 @@ const Typo: React.FC<Props> = props => {
           color={color}
         >
           {children}
-        </Korean>
+        </English>
       );
     case 'KR/Body/S/Bold':
       return (
-        <Korean
+        <English
           id={fontType}
           underline={underline}
           spacing={0}
@@ -233,11 +301,11 @@ const Typo: React.FC<Props> = props => {
           color={color}
         >
           {children}
-        </Korean>
+        </English>
       );
     case 'KR/Body/S/Medium':
       return (
-        <Korean
+        <English
           id={fontType}
           underline={underline}
           spacing={0}
@@ -249,11 +317,11 @@ const Typo: React.FC<Props> = props => {
           color={color}
         >
           {children}
-        </Korean>
+        </English>
       );
     case 'KR/Button/M/Bold':
       return (
-        <Korean
+        <English
           id={fontType}
           underline={underline}
           spacing={-0.005}
@@ -265,11 +333,11 @@ const Typo: React.FC<Props> = props => {
           color={color}
         >
           {children}
-        </Korean>
+        </English>
       );
     case 'KR/Button/S/Bold':
       return (
-        <Korean
+        <English
           id={fontType}
           underline={underline}
           spacing={0}
@@ -281,11 +349,11 @@ const Typo: React.FC<Props> = props => {
           color={color}
         >
           {children}
-        </Korean>
+        </English>
       );
     case 'KR/Button/S/Medium':
       return (
-        <Korean
+        <English
           id={fontType}
           underline={underline}
           spacing={0}
@@ -297,11 +365,11 @@ const Typo: React.FC<Props> = props => {
           color={color}
         >
           {children}
-        </Korean>
+        </English>
       );
     case 'KR/Button/XS/Bold':
       return (
-        <Korean
+        <English
           id={fontType}
           underline={underline}
           spacing={0}
@@ -313,11 +381,11 @@ const Typo: React.FC<Props> = props => {
           color={color}
         >
           {children}
-        </Korean>
+        </English>
       );
     case 'KR/Button/XS/Medium':
       return (
-        <Korean
+        <English
           id={fontType}
           underline={underline}
           spacing={0}
@@ -329,11 +397,11 @@ const Typo: React.FC<Props> = props => {
           color={color}
         >
           {children}
-        </Korean>
+        </English>
       );
     case 'KR/Button/S/Bold/UL':
       return (
-        <Korean
+        <English
           id={fontType}
           underline={true}
           spacing={0}
@@ -345,11 +413,11 @@ const Typo: React.FC<Props> = props => {
           color={color}
         >
           {children}
-        </Korean>
+        </English>
       );
     case 'KR/Button/S/Regular/UL':
       return (
-        <Korean
+        <English
           id={fontType}
           underline={true}
           spacing={0}
@@ -361,11 +429,11 @@ const Typo: React.FC<Props> = props => {
           color={color}
         >
           {children}
-        </Korean>
+        </English>
       );
     case 'KR/Caption/S/Regular':
       return (
-        <Korean
+        <English
           id={fontType}
           underline={underline}
           spacing={-0.005}
@@ -377,11 +445,11 @@ const Typo: React.FC<Props> = props => {
           color={color}
         >
           {children}
-        </Korean>
+        </English>
       );
     case 'KR/Caption/XS/Regular':
       return (
-        <Korean
+        <English
           id={fontType}
           underline={underline}
           spacing={-0.005}
@@ -393,11 +461,11 @@ const Typo: React.FC<Props> = props => {
           color={color}
         >
           {children}
-        </Korean>
+        </English>
       );
     default:
       return (
-        <Korean
+        <English
           id={fontType}
           underline={underline}
           spacing={0}
@@ -409,7 +477,7 @@ const Typo: React.FC<Props> = props => {
           color={color}
         >
           {children}
-        </Korean>
+        </English>
       );
   }
 };
@@ -437,7 +505,7 @@ const defaultTypo = css<{
   font-weight: ${props => props.fontWeight};
 `;
 
-const Korean = styled.p<{
+const English = styled.p<{
   size: number;
   height?: number;
   spacing: number;
@@ -450,5 +518,17 @@ const Korean = styled.p<{
   ${defaultTypo};
   font-family: 'Made Tommy';
 `;
-
+const Magazine = styled.p<{
+  size: number;
+  height?: number;
+  spacing: number;
+  color?: string;
+  underline: boolean;
+  center: boolean;
+  lineThrough: boolean;
+  fontWeight: number;
+}>`
+  ${defaultTypo};
+  font-family: 'Magazine';
+`;
 export default Typo;

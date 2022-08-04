@@ -10,6 +10,7 @@ interface Props {
 
 const Opened: React.FC<Props> = props => {
   const {} = props;
+
   return <Presenter {...props} />;
 };
 

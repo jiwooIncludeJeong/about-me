@@ -31,7 +31,7 @@ const Presenter: React.FC<Props> = props => {
             <Item
               key={item.title}
               title={item.title}
-              isSelected={item.isSelected}
+              isSelected={false}
               onClick={item.onClick}
             />
           ))}

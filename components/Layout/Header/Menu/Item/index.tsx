@@ -13,8 +13,11 @@ interface Props {
 const Item: React.FC<Props> = props => {
   const { title, onClick, isSelected } = props;
   return (
-    <Wrapper>
-      <Typo fontType={'KR/Body/L/Medium'} color={Color.black}>
+    <Wrapper onClick={onClick}>
+      <Typo
+        fontType={isSelected ? 'KR/Body/L/Bold' : 'KR/Body/L/Medium'}
+        color={Color.black}
+      >
         {title}
       </Typo>
     </Wrapper>

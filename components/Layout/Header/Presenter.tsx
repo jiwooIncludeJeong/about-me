@@ -20,10 +20,10 @@ const Presenter: React.FC<Props> = props => {
       <Menu />
       <Center>
         <Typo
-          fontType={isTablet ? 'KR/Heading/S/Black' : 'KR/Heading/XL/Black'}
+          fontType={isTablet ? 'MG/Heading/S/Regular' : 'MG/Heading/L/Regular'}
           color={isTopReached ? Color.black : Color.white}
         >
-          INCLUDE : JEONG JI WOO
+          INCLUDE | JEONG JI WOO
         </Typo>
       </Center>
     </Wrapper>
@@ -39,6 +39,7 @@ const Wrapper = styled.div<{ isTopReached: boolean }>`
   background-color: ${props =>
     props.isTopReached ? Color.white : Color.black};
   transition: background-color 400ms ease;
+  z-index: 1;
 
   path {
     stroke: ${props => (props.isTopReached ? Color.black : Color.white)};

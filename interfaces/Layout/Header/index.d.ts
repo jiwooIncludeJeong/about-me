@@ -1,5 +1,6 @@
+import type { MenuListEnum } from '@enums/Layout/header';
+
 export interface HeaderMenuItemType {
-  title: string;
+  title: MenuListEnum;
   onClick: () => void;
-  isSelected: boolean;
 }
