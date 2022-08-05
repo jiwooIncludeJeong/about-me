@@ -4,19 +4,26 @@ import styled from 'styled-components';
 import { Container } from '@styles/default-styles';
 import Typo from '@components/UI/Typo/Typo';
 import Color from '@assets/color';
+import Modal from '@components/Projects/Modal';
 
 interface Props {
   divRef: RefObject<HTMLDivElement>;
+  showModal: boolean;
+  closeModal: () => void;
+  openModal: (data: any) => void;
 }
 
 const Presenter: React.FC<Props> = props => {
-  const { divRef } = props;
+  const { divRef, openModal } = props;
   return (
-    <Wrapper ref={divRef}>
-      <Typo fontType={'KR/Body/L/Bold'} color={Color.white}>
-        TBD: PROJECTS
-      </Typo>
-    </Wrapper>
+    <React.Fragment>
+      <Wrapper ref={divRef} onClick={openModal}>
+        <Typo fontType={'KR/Body/L/Bold'} color={Color.white}>
+          TBD: PROJECTS
+        </Typo>
+      </Wrapper>
+      <Modal {...props} />
+    </React.Fragment>
   );
 };
 

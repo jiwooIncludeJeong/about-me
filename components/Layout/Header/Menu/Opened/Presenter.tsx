@@ -50,7 +50,7 @@ const Wrapper = styled.div<{ isMenuOpened: boolean }>`
   left: 0;
   opacity: ${props => (props.isMenuOpened ? 1 : 0)};
   transition: opacity 200ms ease;
-  z-index: ${props => (props.isMenuOpened ? 1 : -1)};
+  z-index: ${props => (props.isMenuOpened ? 1 : -2)};
 `;
 
 const MenuArea = styled(Col)<{ isMenuOpened: boolean }>`

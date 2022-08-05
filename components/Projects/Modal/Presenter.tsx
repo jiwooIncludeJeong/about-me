@@ -1,0 +1,31 @@
+import React from 'react';
+import ModalLayout from '@components/UI/Modal/ModalLayout';
+import styled from 'styled-components';
+import { Col } from '@styles/default-styles';
+import Typo from '@components/UI/Typo/Typo';
+import Color from '@assets/color';
+
+interface Props {
+  showModal: boolean;
+  closeModal: () => void;
+}
+
+const Presenter: React.FC<Props> = props => {
+  const { showModal, closeModal } = props;
+  return (
+    <ModalLayout show={showModal} close={closeModal}>
+      <Wrapper>
+        <Typo fontType={'KR/Heading/L/Bold'} color={Color.black}>
+          TBD: Project 모달
+        </Typo>
+      </Wrapper>
+    </ModalLayout>
+  );
+};
+
+const Wrapper = styled(Col)`
+  width: 100%;
+  height: 100%;
+`;
+
+export default Presenter;

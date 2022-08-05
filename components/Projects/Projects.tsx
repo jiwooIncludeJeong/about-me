@@ -4,6 +4,7 @@ import useObserve from '@hooks/useObserve';
 import { useSetRecoilState } from 'recoil';
 import { selectedMenuAtom } from '@recoils/atoms/Layout/header';
 import { MenuListEnum } from '@enums/Layout/header';
+import useModal from '@hooks/useModal';
 
 interface Props {}
 
@@ -16,8 +17,16 @@ const Projects: React.FC<Props> = props => {
     setSelectedMenu(MenuListEnum.PROJECTS);
   };
   useObserve(divRef, onObserve);
+  const { show: showModal, open: openModal, close: closeModal } = useModal();
 
-  return <Presenter divRef={divRef} />;
+  return (
+    <Presenter
+      divRef={divRef}
+      showModal={showModal}
+      openModal={openModal}
+      closeModal={closeModal}
+    />
+  );
 };
 
 export default Projects;

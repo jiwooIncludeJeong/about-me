@@ -27,6 +27,10 @@ const Wrapper = styled(Col)`
       margin-bottom: 0;
     }
   }
+
+  @media only screen and ${props => props.theme.maxGrid2} {
+    padding: 60px 24px;
+  }
 `;
 
 export default Home;
