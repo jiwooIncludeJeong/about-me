@@ -5,6 +5,7 @@ import { Container } from '@styles/default-styles';
 import Color from '@assets/color';
 import Typo from '@components/UI/Typo/Typo';
 import { Span } from '@components/UI/Span/Span';
+import TypingAnimation from '@components/UI/TypingAnimation';
 
 interface Props {
   divRef: RefObject<HTMLDivElement>;
@@ -21,6 +22,7 @@ const Presenter: React.FC<Props> = props => {
         <br />
         효율적인 흐름을 만드는 것을 좋아합니다.
       </Typo>
+      <TypingAnimation content={'My name is JiWoo'} speed={300} />
     </Wrapper>
   );
 };
