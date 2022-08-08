@@ -16,10 +16,12 @@ const Presenter: React.FC<Props> = props => {
   const { isMenuOpened, onClickMenu, items } = props;
   return (
     <React.Fragment>
-      <Wrapper
-        onClick={() => isMenuOpened && onClickMenu()}
-        isMenuOpened={isMenuOpened}
-      />
+      {isMenuOpened && (
+        <Wrapper
+          onClick={() => isMenuOpened && onClickMenu()}
+          isMenuOpened={isMenuOpened}
+        />
+      )}
       <MenuArea isMenuOpened={isMenuOpened}>
         <Row justifyContent={'flex-end'}>
           <Btn onClick={() => isMenuOpened && onClickMenu()}>
@@ -51,6 +53,7 @@ const Wrapper = styled.div<{ isMenuOpened: boolean }>`
   opacity: ${props => (props.isMenuOpened ? 1 : 0)};
   transition: opacity 200ms ease;
   z-index: ${props => (props.isMenuOpened ? 1 : -2)};
+  background-clip: content-box;
 `;
 
 const MenuArea = styled(Col)<{ isMenuOpened: boolean }>`
