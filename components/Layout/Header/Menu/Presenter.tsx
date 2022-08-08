@@ -53,6 +53,10 @@ const Wrapper = styled(Row)<{ isTopReached: boolean }>`
 
   p {
     color: ${props => (props.isTopReached ? Color.black : Color.white)};
+    :hover {
+      text-decoration: underline 1px solid
+        ${props => (props.isTopReached ? Color.black : Color.white)};
+    }
   }
 `;
 

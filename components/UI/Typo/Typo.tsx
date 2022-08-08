@@ -7,8 +7,32 @@ interface Props {
     | 'MG/Heading/L/Regular'
     | 'MG/Heading/S/Bold'
     | 'MG/Heading/S/Regular'
+    | 'EN/Heading/XL/Black'
+    | 'EN/Heading/L/Bold'
+    | 'EN/Heading/L/Regular'
+    | 'EN/Heading/M/Bold'
+    | 'EN/Heading/S/Black'
+    | 'EN/Heading/S/Bold'
+    | 'EN/Heading/XS/Black'
+    | 'EN/Heading/XS/Bold'
+    | 'EN/Body/L/Bold'
+    | 'EN/Body/L/Medium'
+    | 'EN/Body/M/Bold'
+    | 'EN/Body/M/Regular'
+    | 'EN/Body/S/Bold'
+    | 'EN/Body/S/Medium'
+    | 'EN/Button/M/Bold'
+    | 'EN/Button/S/Bold'
+    | 'EN/Button/S/Medium'
+    | 'EN/Button/XS/Bold'
+    | 'EN/Button/XS/Medium'
+    | 'EN/Button/S/Bold/UL'
+    | 'EN/Button/S/Regular/UL'
+    | 'EN/Caption/S/Regular'
+    | 'EN/Caption/XS/Regular'
     | 'KR/Heading/XL/Black'
     | 'KR/Heading/L/Bold'
+    | 'KR/Heading/L/Regular'
     | 'KR/Heading/M/Bold'
     | 'KR/Heading/S/Black'
     | 'KR/Heading/S/Bold'
@@ -111,7 +135,7 @@ const Typo: React.FC<Props> = props => {
           {children}
         </Magazine>
       );
-    case 'KR/Heading/XL/Black':
+    case 'EN/Heading/XL/Black':
       return (
         <English
           id={fontType}
@@ -127,7 +151,7 @@ const Typo: React.FC<Props> = props => {
           {children}
         </English>
       );
-    case 'KR/Heading/L/Bold':
+    case 'EN/Heading/L/Bold':
       return (
         <English
           id={fontType}
@@ -143,7 +167,7 @@ const Typo: React.FC<Props> = props => {
           {children}
         </English>
       );
-    case 'KR/Heading/M/Bold':
+    case 'EN/Heading/M/Bold':
       return (
         <English
           id={fontType}
@@ -159,7 +183,7 @@ const Typo: React.FC<Props> = props => {
           {children}
         </English>
       );
-    case 'KR/Heading/S/Black':
+    case 'EN/Heading/S/Black':
       return (
         <English
           id={fontType}
@@ -175,7 +199,7 @@ const Typo: React.FC<Props> = props => {
           {children}
         </English>
       );
-    case 'KR/Heading/S/Bold':
+    case 'EN/Heading/S/Bold':
       return (
         <English
           id={fontType}
@@ -191,7 +215,7 @@ const Typo: React.FC<Props> = props => {
           {children}
         </English>
       );
-    case 'KR/Heading/XS/Black':
+    case 'EN/Heading/XS/Black':
       return (
         <English
           id={fontType}
@@ -207,7 +231,7 @@ const Typo: React.FC<Props> = props => {
           {children}
         </English>
       );
-    case 'KR/Heading/XS/Bold':
+    case 'EN/Heading/XS/Bold':
       return (
         <English
           id={fontType}
@@ -223,7 +247,7 @@ const Typo: React.FC<Props> = props => {
           {children}
         </English>
       );
-    case 'KR/Body/L/Bold':
+    case 'EN/Body/L/Bold':
       return (
         <English
           id={fontType}
@@ -239,7 +263,7 @@ const Typo: React.FC<Props> = props => {
           {children}
         </English>
       );
-    case 'KR/Body/L/Medium':
+    case 'EN/Body/L/Medium':
       return (
         <English
           id={fontType}
@@ -255,7 +279,7 @@ const Typo: React.FC<Props> = props => {
           {children}
         </English>
       );
-    case 'KR/Body/M/Bold':
+    case 'EN/Body/M/Bold':
       return (
         <English
           id={fontType}
@@ -271,7 +295,7 @@ const Typo: React.FC<Props> = props => {
           {children}
         </English>
       );
-    case 'KR/Body/M/Regular':
+    case 'EN/Body/M/Regular':
       return (
         <English
           id={fontType}
@@ -287,7 +311,7 @@ const Typo: React.FC<Props> = props => {
           {children}
         </English>
       );
-    case 'KR/Body/S/Bold':
+    case 'EN/Body/S/Bold':
       return (
         <English
           id={fontType}
@@ -303,7 +327,7 @@ const Typo: React.FC<Props> = props => {
           {children}
         </English>
       );
-    case 'KR/Body/S/Medium':
+    case 'EN/Body/S/Medium':
       return (
         <English
           id={fontType}
@@ -319,7 +343,7 @@ const Typo: React.FC<Props> = props => {
           {children}
         </English>
       );
-    case 'KR/Button/M/Bold':
+    case 'EN/Button/M/Bold':
       return (
         <English
           id={fontType}
@@ -335,7 +359,7 @@ const Typo: React.FC<Props> = props => {
           {children}
         </English>
       );
-    case 'KR/Button/S/Bold':
+    case 'EN/Button/S/Bold':
       return (
         <English
           id={fontType}
@@ -351,7 +375,7 @@ const Typo: React.FC<Props> = props => {
           {children}
         </English>
       );
-    case 'KR/Button/S/Medium':
+    case 'EN/Button/S/Medium':
       return (
         <English
           id={fontType}
@@ -367,7 +391,7 @@ const Typo: React.FC<Props> = props => {
           {children}
         </English>
       );
-    case 'KR/Button/XS/Bold':
+    case 'EN/Button/XS/Bold':
       return (
         <English
           id={fontType}
@@ -383,7 +407,7 @@ const Typo: React.FC<Props> = props => {
           {children}
         </English>
       );
-    case 'KR/Button/XS/Medium':
+    case 'EN/Button/XS/Medium':
       return (
         <English
           id={fontType}
@@ -399,7 +423,7 @@ const Typo: React.FC<Props> = props => {
           {children}
         </English>
       );
-    case 'KR/Button/S/Bold/UL':
+    case 'EN/Button/S/Bold/UL':
       return (
         <English
           id={fontType}
@@ -415,7 +439,7 @@ const Typo: React.FC<Props> = props => {
           {children}
         </English>
       );
-    case 'KR/Button/S/Regular/UL':
+    case 'EN/Button/S/Regular/UL':
       return (
         <English
           id={fontType}
@@ -431,7 +455,7 @@ const Typo: React.FC<Props> = props => {
           {children}
         </English>
       );
-    case 'KR/Caption/S/Regular':
+    case 'EN/Caption/S/Regular':
       return (
         <English
           id={fontType}
@@ -447,7 +471,7 @@ const Typo: React.FC<Props> = props => {
           {children}
         </English>
       );
-    case 'KR/Caption/XS/Regular':
+    case 'EN/Caption/XS/Regular':
       return (
         <English
           id={fontType}
@@ -462,6 +486,374 @@ const Typo: React.FC<Props> = props => {
         >
           {children}
         </English>
+      );
+    case 'KR/Heading/XL/Black':
+      return (
+        <Korean
+          id={fontType}
+          underline={underline}
+          spacing={0}
+          fontWeight={900}
+          lineThrough={lineThrough}
+          size={40}
+          center={center}
+          height={48}
+          color={color}
+        >
+          {children}
+        </Korean>
+      );
+    case 'KR/Heading/L/Bold':
+      return (
+        <Korean
+          id={fontType}
+          underline={underline}
+          spacing={0}
+          fontWeight={700}
+          lineThrough={lineThrough}
+          size={36}
+          center={center}
+          height={47}
+          color={color}
+        >
+          {children}
+        </Korean>
+      );
+    case 'KR/Heading/L/Regular':
+      return (
+        <Korean
+          id={fontType}
+          underline={underline}
+          spacing={0}
+          fontWeight={400}
+          lineThrough={lineThrough}
+          size={36}
+          center={center}
+          height={47}
+          color={color}
+        >
+          {children}
+        </Korean>
+      );
+    case 'KR/Heading/M/Bold':
+      return (
+        <Korean
+          id={fontType}
+          underline={underline}
+          spacing={0}
+          fontWeight={700}
+          lineThrough={lineThrough}
+          size={32}
+          center={center}
+          height={42}
+          color={color}
+        >
+          {children}
+        </Korean>
+      );
+    case 'KR/Heading/S/Black':
+      return (
+        <Korean
+          id={fontType}
+          underline={underline}
+          spacing={0}
+          fontWeight={900}
+          lineThrough={lineThrough}
+          size={24}
+          center={center}
+          height={34}
+          color={color}
+        >
+          {children}
+        </Korean>
+      );
+    case 'KR/Heading/S/Bold':
+      return (
+        <Korean
+          id={fontType}
+          underline={underline}
+          spacing={0}
+          fontWeight={700}
+          lineThrough={lineThrough}
+          size={24}
+          center={center}
+          height={34}
+          color={color}
+        >
+          {children}
+        </Korean>
+      );
+    case 'KR/Heading/XS/Black':
+      return (
+        <Korean
+          id={fontType}
+          underline={underline}
+          spacing={0}
+          fontWeight={900}
+          lineThrough={lineThrough}
+          size={20}
+          center={center}
+          height={30}
+          color={color}
+        >
+          {children}
+        </Korean>
+      );
+    case 'KR/Heading/XS/Bold':
+      return (
+        <Korean
+          id={fontType}
+          underline={underline}
+          spacing={0}
+          fontWeight={700}
+          lineThrough={lineThrough}
+          size={20}
+          center={center}
+          height={30}
+          color={color}
+        >
+          {children}
+        </Korean>
+      );
+    case 'KR/Body/L/Bold':
+      return (
+        <Korean
+          id={fontType}
+          underline={underline}
+          spacing={-0.005}
+          fontWeight={700}
+          lineThrough={lineThrough}
+          size={16}
+          center={center}
+          height={24}
+          color={color}
+        >
+          {children}
+        </Korean>
+      );
+    case 'KR/Body/L/Medium':
+      return (
+        <Korean
+          id={fontType}
+          underline={underline}
+          spacing={-0.005}
+          fontWeight={500}
+          lineThrough={lineThrough}
+          size={16}
+          center={center}
+          height={24}
+          color={color}
+        >
+          {children}
+        </Korean>
+      );
+    case 'KR/Body/M/Bold':
+      return (
+        <Korean
+          id={fontType}
+          underline={underline}
+          spacing={0}
+          fontWeight={700}
+          lineThrough={lineThrough}
+          size={14}
+          center={center}
+          height={21}
+          color={color}
+        >
+          {children}
+        </Korean>
+      );
+    case 'KR/Body/M/Regular':
+      return (
+        <Korean
+          id={fontType}
+          underline={underline}
+          spacing={0}
+          fontWeight={400}
+          lineThrough={lineThrough}
+          size={14}
+          center={center}
+          height={21}
+          color={color}
+        >
+          {children}
+        </Korean>
+      );
+    case 'KR/Body/S/Bold':
+      return (
+        <Korean
+          id={fontType}
+          underline={underline}
+          spacing={0}
+          fontWeight={700}
+          lineThrough={lineThrough}
+          size={12}
+          center={center}
+          height={17}
+          color={color}
+        >
+          {children}
+        </Korean>
+      );
+    case 'KR/Body/S/Medium':
+      return (
+        <Korean
+          id={fontType}
+          underline={underline}
+          spacing={0}
+          fontWeight={500}
+          lineThrough={lineThrough}
+          size={12}
+          center={center}
+          height={17}
+          color={color}
+        >
+          {children}
+        </Korean>
+      );
+    case 'KR/Button/M/Bold':
+      return (
+        <Korean
+          id={fontType}
+          underline={underline}
+          spacing={-0.005}
+          fontWeight={700}
+          lineThrough={lineThrough}
+          size={16}
+          center={center}
+          height={16}
+          color={color}
+        >
+          {children}
+        </Korean>
+      );
+    case 'KR/Button/S/Bold':
+      return (
+        <Korean
+          id={fontType}
+          underline={underline}
+          spacing={0}
+          fontWeight={700}
+          lineThrough={lineThrough}
+          size={14}
+          center={center}
+          height={14}
+          color={color}
+        >
+          {children}
+        </Korean>
+      );
+    case 'KR/Button/S/Medium':
+      return (
+        <Korean
+          id={fontType}
+          underline={underline}
+          spacing={0}
+          fontWeight={500}
+          lineThrough={lineThrough}
+          size={14}
+          center={center}
+          height={14}
+          color={color}
+        >
+          {children}
+        </Korean>
+      );
+    case 'KR/Button/XS/Bold':
+      return (
+        <Korean
+          id={fontType}
+          underline={underline}
+          spacing={0}
+          fontWeight={700}
+          lineThrough={lineThrough}
+          size={12}
+          center={center}
+          height={12}
+          color={color}
+        >
+          {children}
+        </Korean>
+      );
+    case 'KR/Button/XS/Medium':
+      return (
+        <Korean
+          id={fontType}
+          underline={underline}
+          spacing={0}
+          fontWeight={500}
+          lineThrough={lineThrough}
+          size={12}
+          center={center}
+          height={12}
+          color={color}
+        >
+          {children}
+        </Korean>
+      );
+    case 'KR/Button/S/Bold/UL':
+      return (
+        <Korean
+          id={fontType}
+          underline={true}
+          spacing={0}
+          fontWeight={700}
+          lineThrough={lineThrough}
+          size={14}
+          center={center}
+          height={14}
+          color={color}
+        >
+          {children}
+        </Korean>
+      );
+    case 'KR/Button/S/Regular/UL':
+      return (
+        <Korean
+          id={fontType}
+          underline={true}
+          spacing={0}
+          fontWeight={400}
+          lineThrough={lineThrough}
+          size={14}
+          center={center}
+          height={14}
+          color={color}
+        >
+          {children}
+        </Korean>
+      );
+    case 'KR/Caption/S/Regular':
+      return (
+        <Korean
+          id={fontType}
+          underline={underline}
+          spacing={-0.005}
+          fontWeight={400}
+          lineThrough={lineThrough}
+          size={12}
+          center={center}
+          height={17}
+          color={color}
+        >
+          {children}
+        </Korean>
+      );
+    case 'KR/Caption/XS/Regular':
+      return (
+        <Korean
+          id={fontType}
+          underline={underline}
+          spacing={-0.005}
+          fontWeight={400}
+          lineThrough={lineThrough}
+          size={11}
+          center={center}
+          height={15.4}
+          color={color}
+        >
+          {children}
+        </Korean>
       );
     default:
       return (
@@ -530,5 +922,18 @@ const Magazine = styled.p<{
 }>`
   ${defaultTypo};
   font-family: 'Magazine';
+`;
+const Korean = styled.p<{
+  size: number;
+  height?: number;
+  spacing: number;
+  color?: string;
+  underline: boolean;
+  center: boolean;
+  lineThrough: boolean;
+  fontWeight: number;
+}>`
+  ${defaultTypo};
+  font-family: Pretendard;
 `;
 export default Typo;

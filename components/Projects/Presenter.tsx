@@ -18,7 +18,7 @@ const Presenter: React.FC<Props> = props => {
   return (
     <React.Fragment>
       <Wrapper ref={divRef} onClick={openModal}>
-        <Typo fontType={'KR/Body/L/Bold'} color={Color.white}>
+        <Typo fontType={'EN/Body/L/Bold'} color={Color.white}>
           TBD: PROJECTS
         </Typo>
       </Wrapper>

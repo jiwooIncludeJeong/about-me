@@ -13,7 +13,7 @@ const Presenter: React.FC<Props> = props => {
   const { divRef } = props;
   return (
     <Wrapper ref={divRef}>
-      <Typo fontType={'KR/Body/L/Bold'} color={Color.white}>
+      <Typo fontType={'EN/Body/L/Bold'} color={Color.white}>
         TBD: CAREER
       </Typo>
     </Wrapper>

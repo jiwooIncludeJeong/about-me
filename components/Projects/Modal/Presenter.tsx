@@ -15,7 +15,7 @@ const Presenter: React.FC<Props> = props => {
   return (
     <ModalLayout show={showModal} close={closeModal}>
       <Wrapper>
-        <Typo fontType={'KR/Heading/L/Bold'} color={Color.black}>
+        <Typo fontType={'EN/Heading/L/Bold'} color={Color.black}>
           TBD: Project 모달
         </Typo>
       </Wrapper>
