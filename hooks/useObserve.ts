@@ -4,6 +4,8 @@ import { useEffect } from 'react';
 const useObserve = (
   divRef: RefObject<HTMLDivElement>,
   onObserve: () => void,
+  onUnobserve?: () => void,
+  customOptions?: IntersectionObserverInit,
 ) => {
   useEffect(() => {
     const options = {
@@ -17,11 +19,18 @@ const useObserve = (
           if (divRef.current) {
             onObserve();
           }
+        } else {
+          if (divRef.current) {
+            onUnobserve && onUnobserve();
+          }
         }
       });
     };
 
-    const observer = new IntersectionObserver(callback, options);
+    const observer = new IntersectionObserver(
+      callback,
+      customOptions ?? options,
+    );
     divRef.current && observer.observe(divRef.current);
 
     return () => {
