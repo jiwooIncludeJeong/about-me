@@ -20,7 +20,7 @@ const Wrapper = styled(Col)`
   padding: 140px 24px;
   z-index: 0;
 
-  & > div {
+  > div {
     margin-bottom: 24px;
 
     :last-child {

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Presenter from '@components/Introduce/Presenter';
 import useObserve from '@hooks/useObserve';
 import { useSetRecoilState } from 'recoil';
@@ -11,7 +11,7 @@ interface Props {}
 const Introduce: React.FC<Props> = props => {
   const {} = props;
   const { isTablet } = useWindowSize();
-  const [isFocused, setIsFocused] = useState<boolean>(true);
+  const [isFocused, setIsFocused] = useState<boolean>(false);
   const setSelectedMenu = useSetRecoilState(selectedMenuAtom);
   const divRef = useRef<HTMLDivElement>(null);
   const onObserve = () => {
@@ -25,6 +25,10 @@ const Introduce: React.FC<Props> = props => {
     threshold: isTablet ? 0.2 : 0.5,
     rootMargin: '-120px 0px 0px 0px',
   });
+
+  useEffect(() => {
+    setIsFocused(true);
+  }, []);
 
   return <Presenter divRef={divRef} isFocused={isFocused} />;
 };
