@@ -3,6 +3,9 @@ import React from 'react';
 import styled from 'styled-components';
 import Color from '@assets/color';
 import useScrollLock from '@hooks/useScrollLock';
+import { Row, Btn } from '@styles/default-styles';
+import Typo from '@components/UI/Typo/Typo';
+import useWindowSize from '@hooks/useWindowSize';
 
 interface Props {
   show: boolean;
@@ -12,13 +15,28 @@ interface Props {
 
 const ModalLayout: React.FC<Props> = props => {
   const { close, children, show } = props;
+
+  const { isTablet } = useWindowSize();
+
   useScrollLock(show);
   const onClickInner: MouseEventHandler<HTMLDivElement> = e => {
     e.stopPropagation();
   };
   return (
     <Outer onClick={close} show={show}>
-      <Inner onClick={onClickInner}>{children}</Inner>
+      <Inner onClick={onClickInner} show={show}>
+        <Top>
+          <Btn onClick={close}>
+            <Typo
+              fontType={isTablet ? 'KR/Button/S/Medium' : 'KR/Button/M/Bold'}
+              color={Color.dimgray_m1}
+            >
+              닫기
+            </Typo>
+          </Btn>
+        </Top>
+        {children}
+      </Inner>
     </Outer>
   );
 };
@@ -34,13 +52,23 @@ const Outer = styled.div<{ show: boolean }>`
   opacity: ${props => (props.show ? 1 : 0)};
   transition: opacity 200ms ease-in-out;
   z-index: ${props => (props.show ? 2 : -1)};
+
+  @media only screen and ${props => props.theme.maxGrid2} {
+    padding: 40px;
+  }
 `;
 
-const Inner = styled.div`
+const Inner = styled.div<{ show: boolean }>`
   width: 100%;
   height: 100%;
   background-color: ${Color.white};
   border-radius: 4px;
+  transform: translateY(${({ show }) => (show ? 0 : '100vh')});
+  transition: transform 200ms ease;
 `;
-
+const Top = styled(Row)`
+  width: 100%;
+  padding: 20px;
+  justify-content: flex-end;
+`;
 export default ModalLayout;

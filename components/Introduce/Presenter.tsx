@@ -21,7 +21,7 @@ const Presenter: React.FC<Props> = props => {
           입니다.
           <br />
           <Span fontWeight={200}>
-            반복되는 것들의 규칙을 찾는
+            반복되는 것들의 규칙을 찾아
             <br />
             효율적인 흐름을 만드는
             <br />
