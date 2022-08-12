@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Col, Row, Btn } from '@styles/default-styles';
-import Color from '@assets/color';
+import DarkColor from '@assets/darkColor';
 import type { HeaderMenuItemType } from '@interfaces/Layout/Header';
 import Item from '@components/Layout/Header/Menu/Item';
 import { XIcon } from '@assets/icons';
@@ -59,7 +59,7 @@ const Wrapper = styled.div<{ isMenuOpened: boolean }>`
 const MenuArea = styled(Col)<{ isMenuOpened: boolean }>`
   width: 60vw;
   height: 100vh;
-  background-color: ${Color.white};
+  background-color: ${({ theme }) => theme.color.white};
   position: absolute;
   top: 0;
   right: 0;
@@ -71,7 +71,7 @@ const MenuArea = styled(Col)<{ isMenuOpened: boolean }>`
 const MenuListWrapper = styled(Col)`
   width: 100%;
   margin-top: 12px;
-  border-top: 1px solid ${Color.dimgray_m3};
+  border-top: 1px solid ${({ theme }) => theme.color.black};
 
   div {
     padding: 12px;

@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components';
-import Color from '@assets/color';
+import DarkColor from '@assets/darkColor';
 
 export const Container = styled.div<{
   bgColor?: string;
@@ -164,7 +164,7 @@ export const Divider = styled.div<{
     return `width: 100%; height:${props.thick != null ? props.thick : 1}px;`;
   }}
   background-color: ${props =>
-    props.color != null ? props.color : Color.black};
+    props.color != null ? props.color : DarkColor.black};
   margin: ${props => (props.margin !== null ? props.margin : '0')};
   padding: ${props => (props.padding !== null ? props.padding : '0')};
   border-radius: ${props =>

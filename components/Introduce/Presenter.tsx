@@ -2,7 +2,7 @@ import type { RefObject } from 'react';
 import React from 'react';
 import styled from 'styled-components';
 import { Container } from '@styles/default-styles';
-import Color from '@assets/color';
+import DarkColor from '@assets/darkColor';
 import Typo from '@components/UI/Typo/Typo';
 import { Span } from '@components/UI/Span/Span';
 
@@ -16,7 +16,7 @@ const Presenter: React.FC<Props> = props => {
   return (
     <Wrapper ref={divRef}>
       <TypoWrapper isFocused={isFocused}>
-        <Typo fontType={'KR/Heading/L/Regular'} color={Color.white}>
+        <Typo fontType={'KR/Heading/L/Regular'} color={DarkColor.white}>
           저는 <SpanWithUnderline fontWeight={700}>정지우</SpanWithUnderline>
           입니다.
           <br />
@@ -40,6 +40,7 @@ const Wrapper = styled(Container)`
 
   p {
     word-break: break-all;
+    color: ${({ theme }) => theme.color.white};
   }
 `;
 const SpanWithUnderline = styled(Span)`

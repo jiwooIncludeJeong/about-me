@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { size } from '@styles/theme';
+import { size } from '@styles/defaultTheme';
 
 const useWindowSize = () => {
   const [windowSize, setWindowSize] = useState({

@@ -1,7 +1,12 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import theme from '@styles/theme';
 import Header from '@components/Layout/Header';
+import { ThemeEnum } from '@enums/Layout/theme';
+import { darkTheme, lightTheme } from '@styles/defaultTheme';
+import ThemeChange, {
+  useThemeChangeContext,
+} from '@components/Layout/ThemeChange';
+import ThemeChangeButton from '@components/Layout/ThemeChange/ThemeChangeButton';
 
 interface Props {
   children: React.ReactNode;
@@ -9,11 +14,16 @@ interface Props {
 
 const Layout: React.FC<Props> = props => {
   const { children } = props;
+  const { theme } = useThemeChangeContext();
+
   return (
-    <ThemeProvider theme={theme}>
-      <Header />
-      {children}
-    </ThemeProvider>
+    <ThemeChange>
+      <ThemeProvider theme={theme === ThemeEnum.Dark ? darkTheme : lightTheme}>
+        <ThemeChangeButton />
+        <Header />
+        {children}
+      </ThemeProvider>
+    </ThemeChange>
   );
 };
 

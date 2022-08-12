@@ -3,7 +3,7 @@ import ModalLayout from '@components/UI/Modal/ModalLayout';
 import styled from 'styled-components';
 import { Col } from '@styles/default-styles';
 import Typo from '@components/UI/Typo/Typo';
-import Color from '@assets/color';
+import DarkColor from '@assets/darkColor';
 
 interface Props {
   showModal: boolean;
@@ -15,7 +15,7 @@ const Presenter: React.FC<Props> = props => {
   return (
     <ModalLayout show={showModal} close={closeModal}>
       <Wrapper>
-        <Typo fontType={'EN/Heading/L/Bold'} color={Color.black}>
+        <Typo fontType={'EN/Heading/L/Bold'} color={DarkColor.black}>
           TBD: Project 모달
         </Typo>
       </Wrapper>

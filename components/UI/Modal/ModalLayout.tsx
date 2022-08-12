@@ -1,7 +1,7 @@
 import type { MouseEventHandler } from 'react';
 import React from 'react';
 import styled from 'styled-components';
-import Color from '@assets/color';
+import DarkColor from '@assets/darkColor';
 import useScrollLock from '@hooks/useScrollLock';
 import { Row, Btn } from '@styles/default-styles';
 import Typo from '@components/UI/Typo/Typo';
@@ -29,7 +29,7 @@ const ModalLayout: React.FC<Props> = props => {
           <Btn onClick={close}>
             <Typo
               fontType={isTablet ? 'KR/Button/S/Medium' : 'KR/Button/M/Bold'}
-              color={Color.dimgray_m1}
+              color={DarkColor.black}
             >
               닫기
             </Typo>
@@ -61,7 +61,7 @@ const Outer = styled.div<{ show: boolean }>`
 const Inner = styled.div<{ show: boolean }>`
   width: 100%;
   height: 100%;
-  background-color: ${Color.white};
+  background-color: ${DarkColor.white};
   border-radius: 4px;
   transform: translateY(${({ show }) => (show ? 0 : '100vh')});
   transition: transform 200ms ease;

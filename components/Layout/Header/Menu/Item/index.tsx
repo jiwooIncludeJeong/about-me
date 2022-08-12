@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Btn } from '@styles/default-styles';
 import Typo from '@components/UI/Typo/Typo';
-import Color from '@assets/color';
+import DarkColor from '@assets/darkColor';
 
 interface Props {
   title: string;
@@ -16,7 +16,7 @@ const Item: React.FC<Props> = props => {
     <Wrapper onClick={onClick}>
       <Typo
         fontType={isSelected ? 'EN/Body/L/Bold' : 'EN/Body/L/Medium'}
-        color={Color.black}
+        color={DarkColor.black}
       >
         {title}
       </Typo>
@@ -28,6 +28,10 @@ const Wrapper = styled(Btn)`
   margin-right: 24px;
   :last-child {
     margin-right: 0;
+  }
+
+  p {
+    color: ${({ theme }) => theme.color.black};
   }
 `;
 

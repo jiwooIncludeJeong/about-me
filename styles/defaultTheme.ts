@@ -1,3 +1,7 @@
+import type { DefaultTheme } from 'styled-components';
+import DarkColor from '@assets/darkColor';
+import LightColor from '@assets/lightColor';
+
 export const size = {
   mobile: 762,
   tabletS: 1018,
@@ -12,7 +16,7 @@ export const size = {
   grid5: 375,
 };
 
-const theme = {
+const defaultTheme = {
   minMobile: `(min-width: ${size.mobile}px)`,
   maxMobile: `(max-width: ${size.mobile}px)`,
   minTabletS: `(min-width: ${size.tabletS}px)`,
@@ -37,4 +41,14 @@ const theme = {
   maxGrid5: `(max-width: ${size.grid5 - 1}px)`,
 };
 
-export default theme;
+export const darkTheme: DefaultTheme = {
+  color: DarkColor,
+  ...defaultTheme,
+};
+
+export const lightTheme: DefaultTheme = {
+  color: LightColor,
+  ...defaultTheme,
+};
+
+export default defaultTheme;

@@ -6,7 +6,7 @@ import Item from '@components/Layout/Header/Menu/Item';
 import useWindowSize from '@hooks/useWindowSize';
 import { HamburgerIcon } from '@assets/icons';
 import Opened from '@components/Layout/Header/Menu/Opened';
-import Color from '@assets/color';
+import DarkColor from '@assets/darkColor';
 import type { MenuListEnum } from '@enums/Layout/header';
 
 interface Props {
@@ -52,10 +52,10 @@ const Wrapper = styled(Row)<{ isTopReached: boolean }>`
   align-items: center;
 
   p {
-    color: ${props => (props.isTopReached ? Color.black : Color.white)};
+    color: ${props => (props.isTopReached ? DarkColor.black : DarkColor.white)};
     :hover {
       text-decoration: underline 1px solid
-        ${props => (props.isTopReached ? Color.black : Color.white)};
+        ${props => (props.isTopReached ? DarkColor.black : DarkColor.white)};
     }
   }
 `;

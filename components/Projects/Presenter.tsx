@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Container } from '@styles/default-styles';
 import Typo from '@components/UI/Typo/Typo';
-import Color from '@assets/color';
+import DarkColor from '@assets/darkColor';
 import Modal from '@components/Projects/Modal';
 
 interface Props {
@@ -18,7 +18,7 @@ const Presenter: React.FC<Props> = props => {
   return (
     <React.Fragment>
       <Wrapper ref={divRef} onClick={openModal}>
-        <Typo fontType={'EN/Body/L/Bold'} color={Color.white}>
+        <Typo fontType={'EN/Body/L/Bold'} color={DarkColor.white}>
           TBD: PROJECTS
         </Typo>
       </Wrapper>

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { Row } from '@styles/default-styles';
-import Color from '@assets/color';
+import DarkColor from '@assets/darkColor';
 import Typo from '@components/UI/Typo/Typo';
 import useWindowSize from '@hooks/useWindowSize';
 
@@ -21,7 +21,7 @@ const CareerItem: React.FC<Props> = props => {
       <Duration>
         <Typo
           fontType={isTablet ? 'KR/Body/S/Medium' : 'KR/Body/L/Medium'}
-          color={Color.white}
+          color={DarkColor.white}
         >
           {duration}
         </Typo>
@@ -29,7 +29,7 @@ const CareerItem: React.FC<Props> = props => {
       <Content>
         <Typo
           fontType={isTablet ? 'KR/Body/S/Medium' : 'KR/Body/L/Medium'}
-          color={Color.white}
+          color={DarkColor.white}
         >
           {content}
         </Typo>
@@ -39,7 +39,7 @@ const CareerItem: React.FC<Props> = props => {
 };
 
 const Wrapper = styled(Row)<{ isSelected: boolean }>`
-  border-left: 4px solid ${Color.dimgray_m3};
+  border-left: 4px solid ${({ theme }) => theme.color.white};
   position: relative;
   align-items: center;
   justify-content: flex-start;
@@ -50,13 +50,16 @@ const Wrapper = styled(Row)<{ isSelected: boolean }>`
     content: '';
     width: 16px;
     height: 16px;
-    background-color: ${Color.black};
-    border: 4px solid ${Color.dimgray_m3};
+    background-color: ${({ theme }) => theme.color.black};
+    border: 4px solid ${({ theme }) => theme.color.white};
     border-radius: 100%;
     position: absolute;
     left: -14px;
     top: 50%;
     transform: translateY(-50%);
+  }
+  p {
+    color: ${({ theme }) => theme.color.white};
   }
 `;
 const Duration = styled.div`

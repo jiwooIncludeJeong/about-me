@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Typo from '@components/UI/Typo/Typo';
 import { Col } from '@styles/default-styles';
 import Menu from '@components/Layout/Header/Menu';
-import Color from '@assets/color';
+import DarkColor from '@assets/darkColor';
 import useWindowSize from '@hooks/useWindowSize';
 
 interface Props {
@@ -18,10 +18,10 @@ const Presenter: React.FC<Props> = props => {
   return (
     <Wrapper isTopReached={isTopReached}>
       <Menu />
-      <Center>
+      <Center isTopReached={isTopReached}>
         <Typo
           fontType={isTablet ? 'MG/Heading/S/Regular' : 'MG/Heading/L/Regular'}
-          color={isTopReached ? Color.black : Color.white}
+          color={isTopReached ? DarkColor.black : DarkColor.white}
         >
           INCLUDE | JEONG JI WOO
         </Typo>
@@ -37,12 +37,13 @@ const Wrapper = styled.div<{ isTopReached: boolean }>`
   width: 100vw;
   padding: 24px;
   background-color: ${props =>
-    props.isTopReached ? Color.white : Color.black};
+    props.isTopReached ? DarkColor.white : DarkColor.black};
   transition: background-color 400ms ease;
   z-index: 1;
 
   path {
-    stroke: ${props => (props.isTopReached ? Color.black : Color.white)};
+    stroke: ${props =>
+      props.isTopReached ? DarkColor.black : DarkColor.white};
   }
 
   @media only screen and ${props => props.theme.maxGrid2} {
@@ -51,12 +52,17 @@ const Wrapper = styled.div<{ isTopReached: boolean }>`
   }
 `;
 
-const Center = styled(Col)`
+const Center = styled(Col)<{ isTopReached: boolean }>`
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%) translateY(30%);
   white-space: nowrap;
+
+  p {
+    color: ${({ theme, isTopReached }) =>
+      isTopReached ? theme.color.black : theme.color.white};
+  }
 `;
 
 export default Presenter;

@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import { Col } from '@styles/default-styles';
-import Color from '@assets/color';
+import DarkColor from '@assets/darkColor';
 import Introduce from '@components/Introduce';
 import Career from '@components/Career';
 import Projects from '@components/Projects/Projects';
@@ -8,7 +8,7 @@ import styled from 'styled-components';
 
 const Home: NextPage = () => {
   return (
-    <Wrapper bgColor={Color.black}>
+    <Wrapper bgColor={DarkColor.black}>
       <Introduce />
       <Career />
       <Projects />
@@ -19,6 +19,7 @@ const Home: NextPage = () => {
 const Wrapper = styled(Col)`
   padding: 140px 24px;
   z-index: 0;
+  background-color: ${({ theme }) => theme.color.black};
 
   > div {
     margin-bottom: 24px;
