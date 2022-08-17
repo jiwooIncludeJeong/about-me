@@ -22,7 +22,7 @@ const Wrapper = styled(Col)`
   background-color: ${({ theme }) => theme.color.black};
 
   > div {
-    margin-bottom: 24px;
+    margin-bottom: 120px;
 
     :last-child {
       margin-bottom: 0;
@@ -31,6 +31,14 @@ const Wrapper = styled(Col)`
 
   @media only screen and ${props => props.theme.maxGrid2} {
     padding: 60px 24px;
+
+    > div {
+      margin-bottom: 24px;
+
+      :last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 `;
 

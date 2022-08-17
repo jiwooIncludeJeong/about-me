@@ -52,10 +52,12 @@ const Wrapper = styled(Row)<{ isTopReached: boolean }>`
   align-items: center;
 
   p {
-    color: ${props => (props.isTopReached ? DarkColor.black : DarkColor.white)};
+    color: ${({ isTopReached, theme }) =>
+      isTopReached ? theme.color.black : theme.color.white};
     :hover {
       text-decoration: underline 1px solid
-        ${props => (props.isTopReached ? DarkColor.black : DarkColor.white)};
+        ${({ isTopReached, theme }) =>
+          isTopReached ? theme.color.black : theme.color.white};
     }
   }
 `;

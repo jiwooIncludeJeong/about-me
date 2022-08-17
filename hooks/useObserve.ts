@@ -1,5 +1,5 @@
 import type { RefObject } from 'react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const useObserve = (
   divRef: RefObject<HTMLDivElement>,
@@ -7,6 +7,20 @@ const useObserve = (
   onUnobserve?: () => void,
   customOptions?: IntersectionObserverInit,
 ) => {
+  const [isFocused, setIsFocused] = useState<boolean>(false);
+
+  const handleFocus = (focus: boolean) => {
+    setIsFocused(focus);
+  };
+
+  const onFocus = () => {
+    setIsFocused(true);
+  };
+
+  const onUnFocus = () => {
+    setIsFocused(false);
+  };
+
   useEffect(() => {
     const options = {
       root: null,
@@ -18,10 +32,12 @@ const useObserve = (
         if (entry.isIntersecting) {
           if (divRef.current) {
             onObserve();
+            onFocus();
           }
         } else {
           if (divRef.current) {
             onUnobserve && onUnobserve();
+            onUnFocus();
           }
         }
       });
@@ -37,6 +53,11 @@ const useObserve = (
       divRef.current && observer.unobserve(divRef.current);
     };
   }, []);
+
+  return {
+    isFocused,
+    handleFocus,
+  };
 };
 
 export default useObserve;

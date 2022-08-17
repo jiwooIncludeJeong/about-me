@@ -16,7 +16,11 @@ const Projects: React.FC<Props> = props => {
   const onObserve = () => {
     setSelectedMenu(MenuListEnum.PROJECTS);
   };
-  useObserve(divRef, onObserve);
+  const { isFocused } = useObserve(divRef, onObserve, () => {}, {
+    threshold: 0.5,
+    root: null,
+    rootMargin: '-20px 0px -20px 0px',
+  });
   const { show: showModal, open: openModal, close: closeModal } = useModal();
 
   return (
@@ -25,6 +29,7 @@ const Projects: React.FC<Props> = props => {
       showModal={showModal}
       openModal={openModal}
       closeModal={closeModal}
+      isFocused={isFocused}
     />
   );
 };

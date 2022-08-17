@@ -25,7 +25,7 @@ const Presenter: React.FC<Props> = props => {
             <br />
             효율적인 흐름을 만드는
             <br />
-            프론트앤드 개발자 입니다.
+            프론트엔드 개발자 입니다.
           </Span>
         </Typo>
       </TypoWrapper>

@@ -36,14 +36,14 @@ const Wrapper = styled.div<{ isTopReached: boolean }>`
   top: 0;
   width: 100vw;
   padding: 24px;
-  background-color: ${props =>
-    props.isTopReached ? DarkColor.white : DarkColor.black};
+  background-color: ${({ theme, isTopReached }) =>
+    isTopReached ? theme.color.white : theme.color.black};
   transition: background-color 400ms ease;
   z-index: 1;
 
   path {
-    stroke: ${props =>
-      props.isTopReached ? DarkColor.black : DarkColor.white};
+    stroke: ${({ theme, isTopReached }) =>
+      isTopReached ? theme.color.black : theme.color.white};
   }
 
   @media only screen and ${props => props.theme.maxGrid2} {

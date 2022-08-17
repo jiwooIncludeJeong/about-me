@@ -11,18 +11,13 @@ interface Props {}
 const Career: React.FC<Props> = props => {
   const {} = props;
 
-  const [isFocused, setIsFocused] = useState<boolean>(false);
   const setSelectedMenu = useSetRecoilState(selectedMenuAtom);
   const divRef = useRef<HTMLDivElement>(null);
   const onObserve = () => {
     setSelectedMenu(MenuListEnum.CAREER);
-    setIsFocused(true);
   };
-  const onUnobserve = () => {
-    setIsFocused(false);
-  };
-  useObserve(divRef, onObserve, onUnobserve, {
-    threshold: 1,
+  const { isFocused, handleFocus } = useObserve(divRef, onObserve, () => {}, {
+    threshold: 0.7,
     root: null,
     rootMargin: '-20px 0px -20px 0px',
   });
@@ -53,7 +48,7 @@ const Career: React.FC<Props> = props => {
   }, [items]);
 
   useEffect(() => {
-    setIsFocused(true);
+    handleFocus(true);
   }, []);
 
   return (

@@ -2,25 +2,25 @@ import type { RefObject } from 'react';
 import React from 'react';
 import styled from 'styled-components';
 import { Container } from '@styles/default-styles';
-import Typo from '@components/UI/Typo/Typo';
-import DarkColor from '@assets/darkColor';
 import Modal from '@components/Projects/Modal';
+import SectionTitle from '@components/UI/SectionTitle';
+import ProjectsArea from '@components/Projects/ProjectsArea';
 
 interface Props {
   divRef: RefObject<HTMLDivElement>;
   showModal: boolean;
   closeModal: () => void;
   openModal: (data: any) => void;
+  isFocused: boolean;
 }
 
 const Presenter: React.FC<Props> = props => {
-  const { divRef, openModal } = props;
+  const { divRef, openModal, isFocused } = props;
   return (
     <React.Fragment>
       <Wrapper ref={divRef} onClick={openModal}>
-        <Typo fontType={'EN/Body/L/Bold'} color={DarkColor.white}>
-          TBD: PROJECTS
-        </Typo>
+        <SectionTitle isFocused={isFocused} content={'PROJECTS'} />
+        <ProjectsArea isFocused={isFocused} />
       </Wrapper>
       <Modal {...props} />
     </React.Fragment>
@@ -28,8 +28,6 @@ const Presenter: React.FC<Props> = props => {
 };
 
 const Wrapper = styled(Container)`
-  height: 100vh;
-  background-color: #0070f3;
   justify-content: center;
   align-items: center;
 `;
