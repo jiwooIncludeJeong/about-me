@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
+  assetPrefix:'/jiwooIncludeJeong/about-me',
   reactStrictMode: true,
   swcMinify: true,
   extends: [
