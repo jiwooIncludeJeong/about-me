@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next export",
+    "export": "next build && next export",
     "test": "jest --passWithNoTests --watch-all",
     "svgr": "npx @svgr/cli --template assets/svgs/svgr-cli.template.js assets/svgs assets/icons --out-dir assets/icons --icon --typescript --no-dimensions"
   },

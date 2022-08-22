@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-  assetPrefix:'/jiwooIncludeJeong/about-me',
+  assetPrefix:'.',
   reactStrictMode: true,
   swcMinify: true,
   extends: [
