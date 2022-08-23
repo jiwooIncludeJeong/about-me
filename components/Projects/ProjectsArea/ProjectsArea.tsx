@@ -4,6 +4,7 @@ import type { ProjectType } from '@interfaces/Projects';
 
 interface Props {
   isFocused: boolean;
+  openModal: (data: ProjectType) => void;
 }
 
 const ProjectsArea: React.FC<Props> = props => {

@@ -1,22 +1,20 @@
 import React from 'react';
-import type { ProjectTitleType } from '@interfaces/Projects';
+import type { ProjectType } from '@interfaces/Projects';
 import Presenter from '@components/Projects/ProjectsArea/ProjectItem/Presenter';
 
 interface Props {
-  onClickItem: (id: number) => void;
-  id: number;
-  title: ProjectTitleType;
-  subTitle: string;
+  onClickItem: (data: ProjectType) => void;
+  data: ProjectType;
 }
 
 const ProjectItem: React.FC<Props> = props => {
-  const { onClickItem, id } = props;
+  const { onClickItem, data } = props;
 
   const onClick = () => {
-    onClickItem(id);
+    onClickItem(data);
   };
 
-  return <Presenter onClick={onClick} {...props} />;
+  return <Presenter onClick={onClick} {...data} />;
 };
 
 export default ProjectItem;

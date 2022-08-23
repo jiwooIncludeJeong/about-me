@@ -19,6 +19,7 @@ const CareerItem: React.FC<Props> = props => {
   return (
     <Wrapper isSelected={isSelected}>
       <Duration>
+        <VerticalItem />
         <Typo
           fontType={isTablet ? 'KR/Body/S/Medium' : 'KR/Body/L/Medium'}
           color={DarkColor.white}
@@ -39,13 +40,19 @@ const CareerItem: React.FC<Props> = props => {
 };
 
 const Wrapper = styled(Row)<{ isSelected: boolean }>`
-  border-left: 4px solid ${({ theme }) => theme.color.white};
-  position: relative;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
+  p {
+    color: ${({ theme }) => theme.color.white};
+  }
+`;
+const VerticalItem = styled.div`
+  position: relative;
+  border-left: 4px solid ${({ theme }) => theme.color.white};
+  align-items: center;
   height: 80px;
+  margin-right: 20px;
   overflow: visible;
-
   ::after {
     content: '';
     width: 16px;
@@ -58,15 +65,17 @@ const Wrapper = styled(Row)<{ isSelected: boolean }>`
     top: 50%;
     transform: translateY(-50%);
   }
-  p {
-    color: ${({ theme }) => theme.color.white};
+`;
+const Duration = styled(Row)`
+  margin: 0 20px 0 80px;
+  align-items: center;
+  width: unset;
+
+  @media only screen and ${({ theme }) => theme.maxGrid2} {
+    margin: 0 20px;
   }
 `;
-const Duration = styled.div`
-  width: 50%;
-  margin-left: 20px;
-`;
-const Content = styled.div`
-  width: 50%;
+const Content = styled(Row)`
+  width: unset;
 `;
 export default CareerItem;

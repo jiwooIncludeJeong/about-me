@@ -5,15 +5,16 @@ import type { ProjectType } from '@interfaces/Projects';
 
 interface Props {
   data: Array<ProjectType>;
+  openModal: (data: ProjectType) => void;
   isFocused: boolean;
 }
 
 const Presenter: React.FC<Props> = props => {
-  const { data, isFocused } = props;
+  const { data, isFocused, openModal } = props;
   return (
     <Wrapper isFocused={isFocused}>
       {data.map(value => (
-        <ProjectItem key={value.id} onClickItem={() => {}} {...value} />
+        <ProjectItem key={value.id} onClickItem={openModal} data={value} />
       ))}
     </Wrapper>
   );

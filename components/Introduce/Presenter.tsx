@@ -44,12 +44,17 @@ const Wrapper = styled(Container)`
   }
 `;
 const SpanWithUnderline = styled(Span)`
-  text-decoration: underline 2px solid #f81857;
+  text-decoration: underline 2px solid ${({ theme }) => theme.color.orange};
   position: relative;
 `;
 const TypoWrapper = styled.div<{ isFocused: boolean }>`
+  padding: 0 160px;
   opacity: ${({ isFocused }) => (isFocused ? 1 : 0)};
   transform: translateY(${({ isFocused }) => (isFocused ? 0 : '-200px')});
   transition: opacity ease-in-out 200ms, transform ease 400ms;
+
+  @media only screen and ${({ theme }) => theme.maxGrid2} {
+    padding: 0;
+  }
 `;
 export default Presenter;

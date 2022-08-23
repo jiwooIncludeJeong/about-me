@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
-const useModal = (initialValue?: boolean) => {
+const useModal = <T>(initialValue?: boolean) => {
   const [show, setShow] = useState<boolean>(initialValue ?? false);
-  const [modalData, setModalData] = useState<any>(null);
+  const [modalData, setModalData] = useState<T | null>(null);
 
-  const open = (data?: any) => {
+  const open = (data?: T | null) => {
     setShow(true);
-    setModalData(data);
+    if (data) setModalData(data);
   };
   const close = () => {
     setShow(false);

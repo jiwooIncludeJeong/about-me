@@ -14,7 +14,7 @@ interface Props {
 const Presenter: React.FC<Props> = props => {
   const { title, subTitle, onClick } = props;
   return (
-    <Wrapper>
+    <Wrapper onClick={onClick}>
       <Typo fontType={'EN/Body/L/Medium'} color={DarkColor.white}>
         {title.en}
       </Typo>
@@ -39,7 +39,7 @@ const Wrapper = styled(Col)`
   :hover {
     > p {
       transition: all ease 500ms;
-      color: red;
+      color: ${({ theme }) => theme.color.orange};
     }
   }
 
@@ -49,5 +49,9 @@ const Wrapper = styled(Col)`
 `;
 const SubTitleWrapper = styled.div`
   margin-top: 12px;
+
+  p {
+    opacity: 0.8;
+  }
 `;
 export default Presenter;

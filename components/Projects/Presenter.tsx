@@ -5,22 +5,24 @@ import { Container } from '@styles/default-styles';
 import Modal from '@components/Projects/Modal';
 import SectionTitle from '@components/UI/SectionTitle';
 import ProjectsArea from '@components/Projects/ProjectsArea';
+import type { ProjectType } from '@interfaces/Projects';
 
 interface Props {
   divRef: RefObject<HTMLDivElement>;
   showModal: boolean;
   closeModal: () => void;
-  openModal: (data: any) => void;
+  openModal: (data: ProjectType) => void;
   isFocused: boolean;
+  modalData: ProjectType | null;
 }
 
 const Presenter: React.FC<Props> = props => {
   const { divRef, openModal, isFocused } = props;
   return (
     <React.Fragment>
-      <Wrapper ref={divRef} onClick={openModal}>
+      <Wrapper ref={divRef}>
         <SectionTitle isFocused={isFocused} content={'PROJECTS'} />
-        <ProjectsArea isFocused={isFocused} />
+        <ProjectsArea isFocused={isFocused} openModal={openModal} />
       </Wrapper>
       <Modal {...props} />
     </React.Fragment>

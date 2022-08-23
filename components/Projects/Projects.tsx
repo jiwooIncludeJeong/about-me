@@ -5,6 +5,7 @@ import { useSetRecoilState } from 'recoil';
 import { selectedMenuAtom } from '@recoils/atoms/Layout/header';
 import { MenuListEnum } from '@enums/Layout/header';
 import useModal from '@hooks/useModal';
+import type { ProjectType } from '@interfaces/Projects';
 
 interface Props {}
 
@@ -21,7 +22,12 @@ const Projects: React.FC<Props> = props => {
     root: null,
     rootMargin: '-20px 0px -20px 0px',
   });
-  const { show: showModal, open: openModal, close: closeModal } = useModal();
+  const {
+    show: showModal,
+    open: openModal,
+    close: closeModal,
+    modalData,
+  } = useModal<ProjectType>();
 
   return (
     <Presenter
@@ -30,6 +36,7 @@ const Projects: React.FC<Props> = props => {
       openModal={openModal}
       closeModal={closeModal}
       isFocused={isFocused}
+      modalData={modalData}
     />
   );
 };
