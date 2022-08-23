@@ -61,7 +61,7 @@ const Outer = styled.div<{ show: boolean }>`
 const Inner = styled.div<{ show: boolean }>`
   width: 100%;
   height: 100%;
-  background-color: ${DarkColor.white};
+  background-color: ${({ theme }) => theme.color.white};
   border-radius: 4px;
   transform: translateY(${({ show }) => (show ? 0 : '100vh')});
   transition: transform 200ms ease;
@@ -70,5 +70,9 @@ const Top = styled(Row)`
   width: 100%;
   padding: 20px;
   justify-content: flex-end;
+
+  p {
+    color: ${({ theme }) => theme.color.black};
+  }
 `;
 export default ModalLayout;

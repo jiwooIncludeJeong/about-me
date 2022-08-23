@@ -1,7 +1,7 @@
 import React from 'react';
 import ModalLayout from '@components/UI/Modal/ModalLayout';
 import styled from 'styled-components';
-import { Col } from '@styles/default-styles';
+import { Col, Row } from '@styles/default-styles';
 import Typo from '@components/UI/Typo/Typo';
 import DarkColor from '@assets/darkColor';
 import type { ProjectType } from '@interfaces/Projects';
@@ -25,9 +25,11 @@ const Presenter: React.FC<Props> = props => {
   return (
     <ModalLayout show={showModal} close={closeModal}>
       <Wrapper>
-        <Typo fontType={'EN/Heading/L/Bold'} color={DarkColor.black}>
-          {modalData?.title.kr}
-        </Typo>
+        <Title>
+          <Typo fontType={'EN/Heading/L/Bold'} color={DarkColor.black}>
+            {modalData?.title.kr}
+          </Typo>
+        </Title>
         <TabComponent
           tabEnum={ProjectModalTabEnum}
           tabItemWidth={100}
@@ -46,6 +48,11 @@ const Wrapper = styled(Col)`
 
   @media only screen and ${({ theme }) => theme.maxGrid2} {
     padding: 0 20px;
+  }
+`;
+const Title = styled(Row)`
+  p {
+    color: ${({ theme }) => theme.color.black};
   }
 `;
 
