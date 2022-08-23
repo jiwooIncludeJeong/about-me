@@ -4,14 +4,16 @@ import TabItem from '@components/UI/Tab/TabItem';
 import styled from 'styled-components';
 import { Row } from '@styles/default-styles';
 
-interface Props {
+interface Props<T> {
   tabEnum: Record<string, string>;
   tabItemWidth?: number;
   selectedTab: string;
-  handleSelectedTab: (tab: any) => void;
+  handleSelectedTab: (tab: T) => void;
 }
 
-const Tab: React.FC<Props> = props => {
+export type TabComponentInterface<T = any> = React.FC<Props<T>>;
+
+const Tab: TabComponentInterface = props => {
   const { tabEnum, tabItemWidth, selectedTab, handleSelectedTab } = props;
   const enumArray = objectToArray(tabEnum);
 

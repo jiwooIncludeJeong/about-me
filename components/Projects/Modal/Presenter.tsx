@@ -5,8 +5,11 @@ import { Col } from '@styles/default-styles';
 import Typo from '@components/UI/Typo/Typo';
 import DarkColor from '@assets/darkColor';
 import type { ProjectType } from '@interfaces/Projects';
+import type { TabComponentInterface } from '@components/UI/Tab';
 import Tab from '@components/UI/Tab';
 import { ProjectModalTabEnum } from '@enums/Projects/Modal';
+
+const TabComponent = Tab as TabComponentInterface<ProjectModalTabEnum>;
 
 interface Props {
   showModal: boolean;
@@ -25,7 +28,7 @@ const Presenter: React.FC<Props> = props => {
         <Typo fontType={'EN/Heading/L/Bold'} color={DarkColor.black}>
           {modalData?.title.kr}
         </Typo>
-        <Tab
+        <TabComponent
           tabEnum={ProjectModalTabEnum}
           tabItemWidth={100}
           handleSelectedTab={handleSelectedTab}
