@@ -8,7 +8,7 @@ interface Props {
   tabEnum: Record<string, string>;
   tabItemWidth?: number;
   selectedTab: string;
-  handleSelectedTab: (tab: string) => void;
+  handleSelectedTab: (tab: any) => void;
 }
 
 const Tab: React.FC<Props> = props => {

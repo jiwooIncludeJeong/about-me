@@ -13,7 +13,7 @@ interface Props {
   closeModal: () => void;
   modalData: ProjectType | null;
   selectedTab: ProjectModalTabEnum;
-  handleSelectedTab: (tab: ProjectModalTabEnum | string) => void;
+  handleSelectedTab: (tab: ProjectModalTabEnum) => void;
 }
 
 const Presenter: React.FC<Props> = props => {
