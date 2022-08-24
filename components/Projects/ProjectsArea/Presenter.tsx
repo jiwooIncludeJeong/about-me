@@ -32,6 +32,7 @@ const Wrapper = styled.div<{ isFocused: boolean }>`
 
   @media only screen and ${props => props.theme.maxGrid2} {
     padding: 0 40px;
+    grid-template-columns: repeat(2, 1fr);
   }
 `;
 

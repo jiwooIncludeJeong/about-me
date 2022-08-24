@@ -1,10 +1,11 @@
 import type { RefObject } from 'react';
 import React from 'react';
 import styled from 'styled-components';
-import { Container } from '@styles/default-styles';
+import { Col, Container } from '@styles/default-styles';
 import DarkColor from '@assets/darkColor';
 import Typo from '@components/UI/Typo/Typo';
 import { Span } from '@components/UI/Span/Span';
+import IntroduceButtons from '@components/Introduce/IntroduceButtons';
 
 interface Props {
   divRef: RefObject<HTMLDivElement>;
@@ -28,6 +29,7 @@ const Presenter: React.FC<Props> = props => {
             프론트엔드 개발자 입니다.
           </Span>
         </Typo>
+        <IntroduceButtons />
       </TypoWrapper>
     </Wrapper>
   );
@@ -47,7 +49,7 @@ const SpanWithUnderline = styled(Span)`
   text-decoration: underline 2px solid ${({ theme }) => theme.color.orange};
   position: relative;
 `;
-const TypoWrapper = styled.div<{ isFocused: boolean }>`
+const TypoWrapper = styled(Col)<{ isFocused: boolean }>`
   padding: 0 160px;
   opacity: ${({ isFocused }) => (isFocused ? 1 : 0)};
   transform: translateY(${({ isFocused }) => (isFocused ? 0 : '-200px')});

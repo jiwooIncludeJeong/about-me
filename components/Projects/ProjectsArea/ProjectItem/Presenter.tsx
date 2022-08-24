@@ -29,12 +29,16 @@ const Presenter: React.FC<Props> = props => {
     </Wrapper>
   );
 };
-//todo: mobile 해야함
+
 const Wrapper = styled(Col)`
   padding: 12px;
   align-items: flex-start;
   width: 200px;
   transition: all ease 500ms;
+
+  @media only screen and ${props => props.theme.maxGrid2} {
+    width: 150px;
+  }
 
   :hover {
     > p {

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Btn, Col } from '@styles/default-styles';
 import Typo from '@components/UI/Typo/Typo';
 import DarkColor from '@assets/darkColor';
+import useWindowSize from '@hooks/useWindowSize';
 
 interface Props {
   enumKey: string;
@@ -14,14 +15,17 @@ interface Props {
 
 const TabItem: React.FC<Props> = props => {
   const { enumValue, tabItemWidth, handleSelectedTab, isSelected } = props;
-
+  const { isTablet } = useWindowSize();
   return (
     <Wrapper tabItemWidth={tabItemWidth}>
       <TextBtn
         isSelected={isSelected}
         onClick={() => handleSelectedTab(enumValue)}
       >
-        <Typo fontType={'EN/Button/M/Bold'} color={DarkColor.black}>
+        <Typo
+          fontType={isTablet ? 'EN/Button/S/Bold' : 'EN/Button/M/Bold'}
+          color={DarkColor.black}
+        >
           {enumValue}
         </Typo>
       </TextBtn>

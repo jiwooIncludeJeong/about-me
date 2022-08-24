@@ -8,6 +8,7 @@ import type { ProjectType } from '@interfaces/Projects';
 import type { TabComponentInterface } from '@components/UI/Tab';
 import Tab from '@components/UI/Tab';
 import { ProjectModalTabEnum } from '@enums/Projects/Modal';
+import useWindowSize from '@hooks/useWindowSize';
 
 const TabComponent = Tab as TabComponentInterface<ProjectModalTabEnum>;
 
@@ -22,17 +23,31 @@ interface Props {
 const Presenter: React.FC<Props> = props => {
   const { showModal, closeModal, modalData, handleSelectedTab, selectedTab } =
     props;
+
+  const { isTablet } = useWindowSize();
+
   return (
     <ModalLayout show={showModal} close={closeModal}>
       <Wrapper>
-        <Title>
-          <Typo fontType={'EN/Heading/L/Bold'} color={DarkColor.black}>
-            {modalData?.title.kr}
-          </Typo>
-        </Title>
+        <Top>
+          <Title>
+            <Typo
+              fontType={isTablet ? 'EN/Body/L/Bold' : 'EN/Heading/L/Bold'}
+              color={DarkColor.black}
+            >
+              {modalData?.title.en}
+            </Typo>
+            <Typo
+              fontType={isTablet ? 'KR/Body/S/Bold' : 'KR/Heading/XS/Bold'}
+              color={DarkColor.black}
+            >
+              {modalData?.title.kr}
+            </Typo>
+          </Title>
+        </Top>
         <TabComponent
           tabEnum={ProjectModalTabEnum}
-          tabItemWidth={100}
+          tabItemWidth={isTablet ? 70 : 100}
           handleSelectedTab={handleSelectedTab}
           selectedTab={selectedTab}
         />
@@ -50,10 +65,20 @@ const Wrapper = styled(Col)`
     padding: 0 20px;
   }
 `;
+const Top = styled(Row)`
+  justify-content: space-between;
+`;
 const Title = styled(Row)`
+  width: unset;
+  align-items: flex-end;
+
   p {
     color: ${({ theme }) => theme.color.black};
+    margin-right: 12px;
+  }
+  @media only screen and ${({ theme }) => theme.maxGrid2} {
+    flex-direction: column;
+    align-items: flex-start;
   }
 `;
-
 export default Presenter;

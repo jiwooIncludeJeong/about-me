@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useEffect } from 'react';
 import Presenter from '@components/Projects/Modal/Presenter';
 import type { ProjectType } from '@interfaces/Projects';
 import useTab from '@hooks/useTab';
@@ -11,11 +11,20 @@ interface Props {
 }
 
 const Modal: React.FC<Props> = props => {
-  const {} = props;
+  const { showModal } = props;
 
   const { selectedTab, handleSelectedTab } = useTab<ProjectModalTabEnum>(
     ProjectModalTabEnum.overview,
   );
+
+  const onCloseModal = useCallback(() => {
+    handleSelectedTab(ProjectModalTabEnum.overview);
+  }, [showModal]);
+  useEffect(() => {
+    if (!showModal) {
+      onCloseModal();
+    }
+  }, [showModal]);
 
   return (
     <Presenter

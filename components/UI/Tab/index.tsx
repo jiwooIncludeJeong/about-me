@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { objectToArray } from '~/utils';
 import TabItem from '@components/UI/Tab/TabItem';
 import styled from 'styled-components';
@@ -19,7 +19,7 @@ const Tab: TabComponentInterface = props => {
 
   return (
     <Wrapper>
-      {enumArray.map(([key, value], index) => (
+      {enumArray.map(([key, value]) => (
         <TabItem
           key={key}
           enumKey={key}
