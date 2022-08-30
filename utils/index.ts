@@ -1,3 +1,7 @@
 export const objectToArray = (obj: Record<string, unknown>) => {
-  return Object.entries(obj);
+  if (obj) {
+    return Object.entries(obj);
+  } else {
+    return [];
+  }
 };

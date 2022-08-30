@@ -4,6 +4,13 @@ import { GlobalStyles } from '@styles/global-styles';
 import { Normalize } from 'styled-normalize';
 import Layout from '@components/Layout';
 import { RecoilRoot } from 'recoil';
+import 'swiper/scss';
+import 'swiper/scss/navigation';
+import 'swiper/scss/pagination';
+import 'swiper/scss/scrollbar';
+import SwiperCore, { A11y, Navigation, Pagination, Scrollbar } from 'swiper';
+
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (

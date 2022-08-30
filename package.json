@@ -31,8 +31,10 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "recoil": "^0.7.4",
+    "sass": "^1.54.6",
     "styled-components": "^5.3.5",
-    "styled-normalize": "^8.0.7"
+    "styled-normalize": "^8.0.7",
+    "swiper": "^8.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.18.9",

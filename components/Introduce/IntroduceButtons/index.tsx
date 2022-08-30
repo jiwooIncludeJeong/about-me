@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Row } from '@styles/default-styles';
 import { EmailIcon, GithubIcon, LinkedinIcon } from '@assets/icons';
 import { EMAIL, GITHUB_URL, LINKEDIN_URL } from '@constants/introduce';
-import Link from 'next/link';
 import IntroduceButtonItem from '@components/Introduce/IntroduceButtons/IntroduceButtonItem';
 
 interface Props {}

@@ -21,8 +21,12 @@ const ProjectsArea: React.FC<Props> = props => {
       },
       duration: '2022.06 ~ NOW',
       iconImage: '',
-      link: '',
-      tech: [{ id: 0, name: 'React-Native' }],
+      link: 'https://apps.apple.com/kr/app/%EB%A7%88%EC%9D%B4%EC%89%BD%EB%8B%A8/id1619915278',
+      tech: [
+        { id: 0, name: 'React-Native' },
+        { id: 1, name: 'WebView' },
+        { id: 2, name: 'Typescript' },
+      ],
     },
     {
       id: 1,
@@ -34,8 +38,11 @@ const ProjectsArea: React.FC<Props> = props => {
       },
       duration: '2022.06 ~ NOW',
       iconImage: '',
-      link: '',
-      tech: [{ id: 0, name: 'React-Native' }],
+      link: 'https://shipdan.me/',
+      tech: [
+        { id: 0, name: 'React' },
+        { id: 1, name: 'NextJS' },
+      ],
     },
     {
       id: 2,

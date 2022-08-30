@@ -18,15 +18,30 @@ const Presenter: React.FC<Props> = props => {
     <Wrapper ref={divRef}>
       <TypoWrapper isFocused={isFocused}>
         <Typo fontType={'KR/Heading/L/Regular'} color={DarkColor.white}>
-          저는 <SpanWithUnderline fontWeight={700}>정지우</SpanWithUnderline>
-          입니다.
-          <br />
           <Span fontWeight={200}>
-            반복되는 것들의 규칙을 찾아
+            반복되는 것들의{' '}
+            <UnderLineAnimationSpan
+              isFocused={isFocused}
+              bottom={0}
+              left={0}
+              width={100}
+            >
+              규칙을 찾아
+            </UnderLineAnimationSpan>
             <br />
-            효율적인 흐름을 만드는
+            <UnderLineAnimationSpan
+              isFocused={isFocused}
+              bottom={12}
+              left={0}
+              width={100}
+            >
+              효율적인 흐름을 만드는
+            </UnderLineAnimationSpan>
             <br />
-            프론트엔드 개발자 입니다.
+            프론트엔드 개발자
+            <br />
+            <SpanWithUnderline fontWeight={700}>정지우</SpanWithUnderline>
+            입니다.
           </Span>
         </Typo>
         <IntroduceButtons />
@@ -47,6 +62,7 @@ const Wrapper = styled(Container)`
 `;
 const SpanWithUnderline = styled(Span)`
   text-decoration: underline 2px solid ${({ theme }) => theme.color.orange};
+  text-underline-offset: 6px;
   position: relative;
 `;
 const TypoWrapper = styled(Col)<{ isFocused: boolean }>`
@@ -57,6 +73,26 @@ const TypoWrapper = styled(Col)<{ isFocused: boolean }>`
 
   @media only screen and ${({ theme }) => theme.maxGrid2} {
     padding: 0;
+  }
+`;
+const UnderLineAnimationSpan = styled(Span)<{
+  isFocused: boolean;
+  bottom: number;
+  left: number;
+  width: number;
+}>`
+  position: relative;
+  ::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: ${({ theme }) => theme.color.orange};
+    transform: scaleX(${({ isFocused }) => (isFocused ? 1 : 0)});
+    transform-origin: left;
+    transition: transform 1s ease;
   }
 `;
 export default Presenter;

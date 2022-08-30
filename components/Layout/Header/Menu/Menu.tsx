@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Presenter from '@components/Layout/Header/Menu/Presenter';
 import type { HeaderMenuItemType } from '@interfaces/Layout/Header';
 import useScrollLock from '@hooks/useScrollLock';
@@ -8,6 +8,11 @@ import {
   selectedMenuAtom,
 } from '@recoils/atoms/Layout/header';
 import { MenuListEnum } from '@enums/Layout/header';
+import {
+  CAREER_SCROLL_Y,
+  INTRODUCE_SCROLL_Y,
+  PROJECTS_SCROLL_Y,
+} from '@constants/scroll';
 
 interface Props {}
 
@@ -20,21 +25,21 @@ const Menu: React.FC<Props> = props => {
     {
       title: MenuListEnum.INTRODUCE,
       onClick: () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: INTRODUCE_SCROLL_Y, behavior: 'smooth' });
         setIsMenuOpened(false);
       },
     },
     {
       title: MenuListEnum.CAREER,
       onClick: () => {
-        window.scrollTo({ top: 1000, behavior: 'smooth' });
+        window.scrollTo({ top: CAREER_SCROLL_Y, behavior: 'smooth' });
         setIsMenuOpened(false);
       },
     },
     {
       title: MenuListEnum.PROJECTS,
       onClick: () => {
-        window.scrollTo({ top: 2000, behavior: 'smooth' });
+        window.scrollTo({ top: PROJECTS_SCROLL_Y, behavior: 'smooth' });
         setIsMenuOpened(false);
       },
     },
