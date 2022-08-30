@@ -908,7 +908,7 @@ const English = styled.p<{
   fontWeight: number;
 }>`
   ${defaultTypo};
-  font-family: 'Made Tommy';
+  font-family: 'Roboto';
 `;
 const Magazine = styled.p<{
   size: number;

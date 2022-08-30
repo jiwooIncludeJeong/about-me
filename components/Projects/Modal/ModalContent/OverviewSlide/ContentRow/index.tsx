@@ -30,13 +30,12 @@ const Wrapper = styled(Row)`
   :last-child {
     margin-bottom: 0;
   }
-
-  > p {
-    color: ${({ theme }) => theme.color.black};
-  }
 `;
 const Title = styled(Row)`
   width: unset;
   margin-right: 30px;
+  > p {
+    color: ${({ theme }) => theme.color.black};
+  }
 `;
 export default ContentRow;

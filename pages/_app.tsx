@@ -9,6 +9,7 @@ import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 import 'swiper/scss/scrollbar';
 import SwiperCore, { A11y, Navigation, Pagination, Scrollbar } from 'swiper';
+import '@styles/font.css';
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
