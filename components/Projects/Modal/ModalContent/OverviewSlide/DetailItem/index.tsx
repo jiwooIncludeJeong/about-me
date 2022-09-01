@@ -1,7 +1,6 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback } from 'react';
 import styled from 'styled-components';
-import { Btn, Row } from '@styles/default-styles';
-import { GithubIcon } from '@assets/icons';
+import { Col, Row } from '@styles/default-styles';
 import Link from 'next/link';
 import DarkColor from '@assets/darkColor';
 import Typo from '@components/UI/Typo/Typo';
@@ -9,41 +8,58 @@ import type { ProjectDetailType } from '@interfaces/Projects';
 import { stringToStringArray } from '~/utils';
 
 interface Props {
-  detail?: ProjectDetailType;
+  detail?: Array<ProjectDetailType>;
 }
 
 const DetailItem: React.FC<Props> = props => {
   const { detail } = props;
 
-  const stringArr = useMemo(() => {
-    return stringToStringArray(detail?.content ?? '');
-  }, [detail?.content]);
+  const stringArr = useCallback(
+    (detailItem: ProjectDetailType) => {
+      return stringToStringArray(detailItem?.content ?? '');
+    },
+    [detail],
+  );
 
-  const render = useCallback(() => {
-    return (
-      <Wrapper>
-        <Typo fontType={'KR/Body/M/Regular'} color={DarkColor.black}>
-          {stringArr.map(value => (
-            <React.Fragment key={value}>
-              {value}
-              <br />
-            </React.Fragment>
-          ))}
-        </Typo>
-      </Wrapper>
-    );
-  }, [detail]);
+  const render = useCallback(
+    (value: ProjectDetailType) => {
+      return (
+        <ItemWrapper>
+          <Typo fontType={'KR/Body/M/Regular'} color={DarkColor.black}>
+            {stringArr(value).map(text => (
+              <React.Fragment key={text}>
+                {text}
+                <br />
+              </React.Fragment>
+            ))}
+          </Typo>
+        </ItemWrapper>
+      );
+    },
+    [detail],
+  );
 
-  return detail?.link ? (
-    <Link href={detail.link} passHref={true}>
-      <A target={'_blank'}>{render()}</A>
-    </Link>
-  ) : (
-    <React.Fragment>{render()}</React.Fragment>
+  return (
+    <Wrapper>
+      {detail &&
+        detail.map(value => (
+          <React.Fragment key={value.id}>
+            {value.link ? (
+              <Link href={value.link} passHref={true}>
+                <A target={'_blank'}>{render(value)}</A>
+              </Link>
+            ) : (
+              <React.Fragment>{render(value)}</React.Fragment>
+            )}
+          </React.Fragment>
+        ))}
+    </Wrapper>
   );
 };
 
-const Wrapper = styled(Row)`
+const Wrapper = styled(Col)``;
+
+const ItemWrapper = styled(Row)`
   width: unset;
   align-items: flex-start;
 
@@ -53,6 +69,10 @@ const Wrapper = styled(Row)`
 `;
 const A = styled.a`
   position: relative;
+  margin-bottom: 16px;
+  :last-child {
+    margin-bottom: 0;
+  }
 
   ::after {
     left: 0;
@@ -65,7 +85,7 @@ const A = styled.a`
     font-size: 12px;
     font-family: Roboto;
     font-weight: 500;
-    opacity: 0;
+    opacity: 0.6;
   }
   :hover::after {
     opacity: 1;

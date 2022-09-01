@@ -1,46 +1,4 @@
 @font-face {
-  font-family: 'Made Tommy';
-  font-weight: 100;
-  src : local('MADE TOMMY Thin'),
-  url("/fonts/MADE TOMMY Thin.otf") format("opentype");
-}
-@font-face {
-  font-family: 'Made Tommy';
-  font-weight: 300;
-  src : local('MADE TOMMY Light'),
-  url("/fonts/MADE TOMMY Light.otf") format("opentype");
-}
-@font-face {
-  font-family: 'Made Tommy';
-  font-weight: 400;
-  src : local('MADE TOMMY Regular'),
-  url("/fonts/MADE TOMMY Regular.otf") format("opentype");
-}
-@font-face {
-  font-family: 'Made Tommy';
-  font-weight: 500;
-  src : local('MADE TOMMY Medium'),
-  url("/fonts/MADE TOMMY Medium.otf") format("opentype");
-}
-@font-face {
-  font-family: 'Made Tommy';
-  font-weight: 700;
-  src : local('MADE TOMMY Bold'),
-  url("/fonts/MADE TOMMY Bold.otf") format("opentype");
-}
-@font-face {
-  font-family: 'Made Tommy';
-  font-weight: 800;
-  src : local('MADE TOMMY ExtraBold'),
-  url("/fonts/MADE TOMMY ExtraBold.otf") format("opentype");
-}
-@font-face {
-  font-family: 'Made Tommy';
-  font-weight: 900;
-  src : local('MADE TOMMY Black'),
-  url("/fonts/MADE TOMMY Black.otf") format("opentype");
-}
-@font-face {
   font-family: 'Roboto';
   font-weight: 100;
   src : local('Roboto-Thin'),

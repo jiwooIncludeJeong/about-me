@@ -25,6 +25,7 @@ const Presenter: React.FC<Props> = props => {
               bottom={0}
               left={0}
               width={100}
+              fontWeight={700}
             >
               규칙을 찾아
             </UnderLineAnimationSpan>
@@ -34,6 +35,7 @@ const Presenter: React.FC<Props> = props => {
               bottom={12}
               left={0}
               width={100}
+              fontWeight={700}
             >
               효율적인 흐름을 만드는
             </UnderLineAnimationSpan>

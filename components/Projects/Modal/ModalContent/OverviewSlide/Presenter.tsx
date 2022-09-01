@@ -9,6 +9,8 @@ import TechItem from '@components/Projects/Modal/ModalContent/OverviewSlide/Tech
 import LinkItem from '@components/Projects/Modal/ModalContent/OverviewSlide/LinkItem';
 import GitHubItem from '@components/Projects/Modal/ModalContent/OverviewSlide/GitHubItem';
 import DetailItem from '@components/Projects/Modal/ModalContent/OverviewSlide/DetailItem';
+import ShortDetailItem from '@components/Projects/Modal/ModalContent/OverviewSlide/ShortDetailItem';
+import OnlyTypoItem from '@components/Projects/Modal/ModalContent/OverviewSlide/OnlyTypoItem';
 
 interface Props {
   modalData: ProjectType | null;
@@ -26,10 +28,18 @@ const Presenter: React.FC<Props> = props => {
         }
         title={'TECH'}
       />
-      <ContentRow
-        render={() => <LinkItem link={modalData?.link ?? ''} />}
-        title={'LINK'}
-      />
+      {(modalData?.link || modalData?.iosLink || modalData?.androidLink) && (
+        <ContentRow
+          render={() => (
+            <LinkItem
+              link={modalData?.link ?? ''}
+              iosLink={modalData?.iosLink ?? ''}
+              androidLink={modalData?.androidLink ?? ''}
+            />
+          )}
+          title={'LINK'}
+        />
+      )}
       {modalData?.github && (
         <ContentRow
           render={() => <GitHubItem link={modalData?.github ?? ''} />}
@@ -37,23 +47,17 @@ const Presenter: React.FC<Props> = props => {
         />
       )}
       <ContentRow
-        render={() => (
-          <Typo fontType={'KR/Body/M/Regular'} color={DarkColor.black}>
-            {modalData?.subTitle ?? ''}
-          </Typo>
-        )}
+        render={() => <OnlyTypoItem content={modalData?.subTitle ?? ''} />}
         title={'IS'}
       />
       <ContentRow
-        render={() => (
-          <Typo fontType={'KR/Body/M/Regular'} color={DarkColor.black}>
-            {modalData?.duration ?? ''}
-          </Typo>
-        )}
+        render={() => <OnlyTypoItem content={modalData?.duration ?? ''} />}
         title={'DURATION'}
       />
       <ContentRow
-        render={() => <DetailItem detail={modalData?.detail} />}
+        render={() => (
+          <ShortDetailItem shortDetail={modalData?.shortDetail ?? ''} />
+        )}
         title={'DETAIL'}
         alignItems={'flex-start'}
       />

@@ -2,11 +2,14 @@ export interface ProjectType {
   id: number;
   title: ProjectTitleType;
   subTitle: string;
-  link: string;
+  link?: string;
+  androidLink?: string;
+  iosLink?: string;
   duration: string;
   iconImage: string;
   tech: Array<TechType>;
-  detail: ProjectDetailType;
+  detail: Array<ProjectDetailType>;
+  shortDetail: string;
   github?: string;
 }
 
