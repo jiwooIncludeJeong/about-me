@@ -6,6 +6,7 @@ import DarkColor from '@assets/darkColor';
 import Typo from '@components/UI/Typo/Typo';
 import type { ProjectDetailType } from '@interfaces/Projects';
 import { stringToStringArray } from '~/utils';
+import useWindowSize from '@hooks/useWindowSize';
 
 interface Props {
   detail?: Array<ProjectDetailType>;
@@ -21,11 +22,16 @@ const DetailItem: React.FC<Props> = props => {
     [detail],
   );
 
+  const { isTablet } = useWindowSize();
+
   const render = useCallback(
     (value: ProjectDetailType) => {
       return (
         <ItemWrapper>
-          <Typo fontType={'KR/Body/M/Regular'} color={DarkColor.black}>
+          <Typo
+            fontType={isTablet ? 'KR/Body/S/Medium' : 'KR/Body/M/Regular'}
+            color={DarkColor.black}
+          >
             {stringArr(value).map(text => (
               <React.Fragment key={text}>
                 {text}
@@ -69,7 +75,7 @@ const ItemWrapper = styled(Row)`
 `;
 const A = styled.a`
   position: relative;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   :last-child {
     margin-bottom: 0;
   }
@@ -86,6 +92,10 @@ const A = styled.a`
     font-family: Roboto;
     font-weight: 500;
     opacity: 0.6;
+
+    @media only screen and ${({ theme }) => theme.maxGrid2} {
+      font-size: 8px;
+    }
   }
   :hover::after {
     opacity: 1;

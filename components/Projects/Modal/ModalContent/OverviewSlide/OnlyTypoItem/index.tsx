@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Typo from '@components/UI/Typo/Typo';
 import DarkColor from '@assets/darkColor';
+import useWindowSize from '@hooks/useWindowSize';
 
 interface Props {
   content: string;
@@ -9,9 +10,13 @@ interface Props {
 
 const OnlyTypoItem: React.FC<Props> = props => {
   const { content } = props;
+  const { isTablet } = useWindowSize();
   return (
     <Wrapper>
-      <Typo fontType={'KR/Body/M/Regular'} color={DarkColor.black}>
+      <Typo
+        fontType={isTablet ? 'KR/Body/S/Medium' : 'KR/Body/M/Regular'}
+        color={DarkColor.black}
+      >
         {content}
       </Typo>
     </Wrapper>

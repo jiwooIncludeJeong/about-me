@@ -1,5 +1,10 @@
 export enum ProjectModalTabEnum {
-  overview = 'OVERVIEW',
+  OVERVIEW = 'OVERVIEW',
+  EFFORT = 'EFFORT',
+  DIFFICULTY = 'DIFFICULTY',
+}
+
+export enum ProjectDetailTypeEnum {
   EFFORT = 'EFFORT',
   DIFFICULTY = 'DIFFICULTY',
 }

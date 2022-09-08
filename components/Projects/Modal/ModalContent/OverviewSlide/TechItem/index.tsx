@@ -39,6 +39,10 @@ const Wrapper = styled(Row)`
     color: ${({ theme }) => theme.color.white};
     white-space: nowrap;
   }
+
+  @media only screen and ${({ theme }) => theme.maxGrid2} {
+    padding: 4px 8px;
+  }
 `;
 
 export default TechItem;

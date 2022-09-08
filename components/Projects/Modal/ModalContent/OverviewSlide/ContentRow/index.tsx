@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Row } from '@styles/default-styles';
 import DarkColor from '@assets/darkColor';
 import Typo from '@components/UI/Typo/Typo';
+import useWindowSize from '@hooks/useWindowSize';
 
 interface Props {
   render: () => React.ReactNode;
@@ -12,10 +13,16 @@ interface Props {
 
 const ContentRow: React.FC<Props> = props => {
   const { title, render, alignItems } = props;
+
+  const { isTablet } = useWindowSize();
+
   return (
     <Wrapper alignItems={alignItems ?? 'center'}>
       <Title>
-        <Typo fontType={'EN/Body/L/Bold'} color={DarkColor.black}>
+        <Typo
+          fontType={isTablet ? 'EN/Body/S/Bold' : 'EN/Body/L/Bold'}
+          color={DarkColor.black}
+        >
           {title}
         </Typo>
       </Title>

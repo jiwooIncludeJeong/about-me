@@ -10,6 +10,9 @@ import useWindowSize from '@hooks/useWindowSize';
 import ModalTitle from '@components/Projects/Modal/ModalTitle';
 import ModalContent from '@components/Projects/Modal/ModalContent';
 import type SwiperCore from 'swiper';
+import OverviewSlide from '@components/Projects/Modal/ModalContent/OverviewSlide';
+import DifficultySlide from '@components/Projects/Modal/ModalContent/DifficultySlide';
+import EffortsSlide from '@components/Projects/Modal/ModalContent/EffortSlide';
 
 const TabComponent = Tab as TabComponentInterface<ProjectModalTabEnum>;
 
@@ -52,6 +55,18 @@ const Presenter: React.FC<Props> = props => {
           onBeforeInit={onBeforeInit}
           onActiveIndexChange={onActiveIndexChange}
           modalData={modalData}
+          renderSlide={(enumValue, modalDataProps) => {
+            switch (enumValue) {
+              case ProjectModalTabEnum.OVERVIEW:
+                return <OverviewSlide modalData={modalDataProps} />;
+              case ProjectModalTabEnum.EFFORT:
+                return <EffortsSlide modalData={modalDataProps} />;
+              case ProjectModalTabEnum.DIFFICULTY:
+                return <DifficultySlide modalData={modalDataProps} />;
+              default:
+                return <></>;
+            }
+          }}
         />
       </Wrapper>
     </ModalLayout>
@@ -61,8 +76,12 @@ const Presenter: React.FC<Props> = props => {
 const Wrapper = styled(Col)`
   width: 100%;
   height: 100%;
+
   > div:not(.swiper) {
     padding: 0 48px;
+  }
+  > div.swiper {
+    overflow-y: scroll;
   }
 
   @media only screen and ${({ theme }) => theme.maxGrid2} {
@@ -74,5 +93,5 @@ const Wrapper = styled(Col)`
 const Top = styled(Row)`
   justify-content: space-between;
 `;
-
+const ContentWrapper = styled.div``;
 export default Presenter;

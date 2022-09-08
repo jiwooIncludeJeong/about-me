@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Btn, Row } from '@styles/default-styles';
 import { AndroidIcon, AppleIcon, ShareIcon } from '@assets/icons';
 import Link from 'next/link';
+import useWindowSize from '@hooks/useWindowSize';
 
 interface Props {
   link?: string;
@@ -12,13 +13,19 @@ interface Props {
 
 const LinkItem: React.FC<Props> = props => {
   const { link, androidLink, iosLink } = props;
+
+  const { isTablet } = useWindowSize();
+
   return (
     <Wrapper>
       {link && link.length > 0 && (
         <Link href={link} passHref={true}>
           <a target={'_blank'}>
             <Button>
-              <ShareIcon width={32} height={32} />
+              <ShareIcon
+                width={isTablet ? 24 : 32}
+                height={isTablet ? 24 : 32}
+              />
             </Button>
           </a>
         </Link>
@@ -27,7 +34,10 @@ const LinkItem: React.FC<Props> = props => {
         <Link href={iosLink} passHref={true}>
           <a target={'_blank'}>
             <Button>
-              <AppleIcon width={32} height={32} />
+              <AppleIcon
+                width={isTablet ? 24 : 32}
+                height={isTablet ? 24 : 32}
+              />
             </Button>
           </a>
         </Link>
@@ -36,7 +46,10 @@ const LinkItem: React.FC<Props> = props => {
         <Link href={androidLink} passHref={true}>
           <a target={'_blank'}>
             <Button>
-              <AndroidIcon width={32} height={32} />
+              <AndroidIcon
+                width={isTablet ? 24 : 32}
+                height={isTablet ? 24 : 32}
+              />
             </Button>
           </a>
         </Link>

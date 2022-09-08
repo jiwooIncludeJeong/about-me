@@ -1,3 +1,5 @@
+import type { ProjectDetailTypeEnum } from '@enums/Projects/Modal';
+
 export interface ProjectType {
   id: number;
   title: ProjectTitleType;
@@ -22,6 +24,7 @@ export interface ProjectDetailType {
   id: number;
   content: string;
   link?: string;
+  type: ProjectDetailTypeEnum;
 }
 
 export interface TechType {

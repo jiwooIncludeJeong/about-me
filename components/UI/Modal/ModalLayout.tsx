@@ -74,5 +74,9 @@ const Top = styled(Row)`
   p {
     color: ${({ theme }) => theme.color.black};
   }
+
+  @media only screen and ${({ theme }) => theme.maxGrid2} {
+    padding: 12px 20px;
+  }
 `;
 export default ModalLayout;

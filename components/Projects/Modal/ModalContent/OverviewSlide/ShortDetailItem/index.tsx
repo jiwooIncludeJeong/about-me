@@ -1,12 +1,10 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import styled from 'styled-components';
-import { Btn, Row } from '@styles/default-styles';
-import { GithubIcon } from '@assets/icons';
-import Link from 'next/link';
+import { Row } from '@styles/default-styles';
 import DarkColor from '@assets/darkColor';
 import Typo from '@components/UI/Typo/Typo';
-import type { ProjectDetailType } from '@interfaces/Projects';
 import { stringToStringArray } from '~/utils';
+import useWindowSize from '@hooks/useWindowSize';
 
 interface Props {
   shortDetail?: string;
@@ -19,11 +17,16 @@ const ShortDetailItem: React.FC<Props> = props => {
     return stringToStringArray(shortDetail ?? '');
   }, [shortDetail]);
 
+  const { isTablet } = useWindowSize();
+
   return (
     <Wrapper>
-      <Typo fontType={'KR/Body/M/Regular'} color={DarkColor.black}>
-        {stringArr.map(value => (
-          <React.Fragment key={value}>
+      <Typo
+        fontType={isTablet ? 'KR/Body/S/Medium' : 'KR/Body/M/Regular'}
+        color={DarkColor.black}
+      >
+        {stringArr.map((value, index) => (
+          <React.Fragment key={`${value}_${index}`}>
             {value}
             <br />
           </React.Fragment>

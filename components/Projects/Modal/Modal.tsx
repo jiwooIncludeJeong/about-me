@@ -15,7 +15,7 @@ const Modal: React.FC<Props> = props => {
   const { showModal } = props;
 
   const { selectedTab, handleSelectedTab } = useTab<ProjectModalTabEnum>(
-    ProjectModalTabEnum.overview,
+    ProjectModalTabEnum.OVERVIEW,
   );
 
   const swiperRef = useRef<SwiperCore>(null);
@@ -29,7 +29,7 @@ const Modal: React.FC<Props> = props => {
     const activeTab: ProjectModalTabEnum =
       Object.values(ProjectModalTabEnum).find(
         (_, index) => index === activeIndex,
-      ) ?? ProjectModalTabEnum.overview;
+      ) ?? ProjectModalTabEnum.OVERVIEW;
     if (activeTab) handleSelectedTab(activeTab);
   };
   const slideSwiperTo = (index: number) => {
@@ -37,7 +37,7 @@ const Modal: React.FC<Props> = props => {
   };
 
   const onCloseModal = useCallback(() => {
-    handleSelectedTab(ProjectModalTabEnum.overview);
+    handleSelectedTab(ProjectModalTabEnum.OVERVIEW);
   }, [showModal]);
 
   useEffect(() => {

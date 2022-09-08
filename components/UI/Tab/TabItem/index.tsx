@@ -23,7 +23,7 @@ const TabItem: React.FC<Props> = props => {
         onClick={() => handleSelectedTab(enumValue)}
       >
         <Typo
-          fontType={isTablet ? 'EN/Button/S/Bold' : 'EN/Button/M/Bold'}
+          fontType={isTablet ? 'EN/Button/XS/Medium' : 'EN/Button/M/Bold'}
           color={DarkColor.black}
         >
           {enumValue}

@@ -1,4 +1,5 @@
-import React, { useRef } from 'react';
+import type { ReactNode } from 'react';
+import React from 'react';
 import Presenter from '@components/Projects/Modal/ModalContent/Presenter';
 import { objectToArray } from '~/utils';
 import type SwiperCore from 'swiper';
@@ -9,10 +10,12 @@ interface Props {
   onBeforeInit: (event: SwiperCore) => void;
   onActiveIndexChange: (event: SwiperCore) => void;
   modalData: ProjectType | null;
+  renderSlide: (enumValue: string, modalData: ProjectType | null) => ReactNode;
 }
 
 const ModalContent: React.FC<Props> = props => {
-  const { tabEnum, onBeforeInit, onActiveIndexChange, modalData } = props;
+  const { tabEnum, onBeforeInit, onActiveIndexChange, modalData, renderSlide } =
+    props;
 
   return (
     <Presenter
@@ -20,6 +23,7 @@ const ModalContent: React.FC<Props> = props => {
       onBeforeInit={onBeforeInit}
       onActiveIndexChange={onActiveIndexChange}
       modalData={modalData}
+      renderSlide={renderSlide}
     />
   );
 };

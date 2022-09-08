@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Btn } from '@styles/default-styles';
 import { GithubIcon } from '@assets/icons';
 import Link from 'next/link';
+import useWindowSize from '@hooks/useWindowSize';
 
 interface Props {
   link: string;
@@ -10,11 +11,12 @@ interface Props {
 
 const GitHubItem: React.FC<Props> = props => {
   const { link } = props;
+  const { isTablet } = useWindowSize();
   return (
     <Link href={link} passHref={true}>
       <a target={'_blank'}>
         <Button>
-          <GithubIcon width={32} height={32} />
+          <GithubIcon width={isTablet ? 24 : 32} height={isTablet ? 24 : 32} />
         </Button>
       </a>
     </Link>

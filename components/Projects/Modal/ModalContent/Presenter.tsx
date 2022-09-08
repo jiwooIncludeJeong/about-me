@@ -1,9 +1,8 @@
-import React, { RefObject } from 'react';
+import type { ReactNode } from 'react';
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from 'styled-components';
-import { Col } from '@styles/default-styles';
 import type SwiperCore from 'swiper';
-import OverviewSlide from '@components/Projects/Modal/ModalContent/OverviewSlide';
 import type { ProjectType } from '@interfaces/Projects';
 
 interface Props {
@@ -11,10 +10,17 @@ interface Props {
   onBeforeInit: (event: SwiperCore) => void;
   onActiveIndexChange: (event: SwiperCore) => void;
   modalData: ProjectType | null;
+  renderSlide: (enumValue: string, modalData: ProjectType | null) => ReactNode;
 }
 
 const Presenter: React.FC<Props> = props => {
-  const { tabEnumArray, onBeforeInit, onActiveIndexChange, modalData } = props;
+  const {
+    tabEnumArray,
+    onBeforeInit,
+    onActiveIndexChange,
+    modalData,
+    renderSlide,
+  } = props;
   return (
     <StyledSwiper
       onBeforeInit={onBeforeInit}
@@ -23,7 +29,7 @@ const Presenter: React.FC<Props> = props => {
     >
       {tabEnumArray.map(([value]) => (
         <SwiperSlide id={value} key={value}>
-          <OverviewSlide modalData={modalData} />
+          {renderSlide(value, modalData)}
         </SwiperSlide>
       ))}
     </StyledSwiper>
