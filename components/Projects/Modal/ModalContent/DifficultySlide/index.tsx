@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Col } from '@styles/default-styles';
 import type { ProjectType } from '@interfaces/Projects';
 import { ProjectDetailTypeEnum } from '@enums/Projects/Modal';
+import DetailItem from '@components/Projects/Modal/ModalContent/OverviewSlide/DetailItem';
 
 interface Props {
   modalData: ProjectType | null;
@@ -19,7 +20,11 @@ const DifficultySlide: React.FC<Props> = props => {
     [modalData],
   );
 
-  return <Wrapper />;
+  return (
+    <Wrapper>
+      <DetailItem detail={difficulties} />
+    </Wrapper>
+  );
 };
 const Wrapper = styled(Col)`
   width: 100%;

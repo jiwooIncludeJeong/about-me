@@ -26,7 +26,7 @@ const ContentRow: React.FC<Props> = props => {
           {title}
         </Typo>
       </Title>
-      {render()}
+      <Render>{render()}</Render>
     </Wrapper>
   );
 };
@@ -45,5 +45,10 @@ const Title = styled(Row)`
   > p {
     color: ${({ theme }) => theme.color.black};
   }
+`;
+const Render = styled(Row)`
+  width: unset;
+  flex-wrap: wrap;
+  box-sizing: border-box;
 `;
 export default ContentRow;

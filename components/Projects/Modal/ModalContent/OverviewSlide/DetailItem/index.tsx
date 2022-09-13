@@ -7,6 +7,7 @@ import Typo from '@components/UI/Typo/Typo';
 import type { ProjectDetailType } from '@interfaces/Projects';
 import { stringToStringArray } from '~/utils';
 import useWindowSize from '@hooks/useWindowSize';
+import { Span } from '@components/UI/Span/Span';
 
 interface Props {
   detail?: Array<ProjectDetailType>;
@@ -32,6 +33,13 @@ const DetailItem: React.FC<Props> = props => {
             fontType={isTablet ? 'KR/Body/S/Medium' : 'KR/Body/M/Regular'}
             color={DarkColor.black}
           >
+            <Span fontWeight={900}>{value.title}</Span>{' '}
+            {value.link && (
+              <Span color={DarkColor.orange} fontWeight={900}>
+                [LINK]
+              </Span>
+            )}
+            <br />
             {stringArr(value).map(text => (
               <React.Fragment key={text}>
                 {text}
@@ -68,38 +76,29 @@ const Wrapper = styled(Col)``;
 const ItemWrapper = styled(Row)`
   width: unset;
   align-items: flex-start;
-
-  p {
-    color: ${({ theme }) => theme.color.black};
-  }
-`;
-const A = styled.a`
-  position: relative;
   margin-bottom: 24px;
+
   :last-child {
     margin-bottom: 0;
   }
 
-  ::after {
-    left: 0;
-    bottom: -12px;
-    position: absolute;
-    content: 'LINK';
-    padding: 6px 12px;
-    background-color: ${({ theme }) => theme.color.orange};
-    border-radius: 4px;
-    font-size: 12px;
-    font-family: Roboto;
-    font-weight: 500;
-    opacity: 0.6;
-
-    @media only screen and ${({ theme }) => theme.maxGrid2} {
-      font-size: 8px;
+  :hover {
+    p {
+      text-decoration: underline 1px ${({ theme }) => theme.color.orange};
+      text-decoration-style: double;
     }
   }
-  :hover::after {
-    opacity: 1;
-    transition: opacity 200ms ease-in-out;
+
+  p {
+    color: ${({ theme }) => theme.color.black};
+    word-break: break-word;
+  }
+`;
+const A = styled.a`
+  margin-bottom: 24px;
+  position: relative;
+  :last-child {
+    margin-bottom: 0;
   }
 `;
 export default DetailItem;

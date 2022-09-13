@@ -22,6 +22,7 @@ export interface ProjectTitleType {
 
 export interface ProjectDetailType {
   id: number;
+  title: string;
   content: string;
   link?: string;
   type: ProjectDetailTypeEnum;

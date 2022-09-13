@@ -77,5 +77,6 @@ const Duration = styled(Row)`
 `;
 const Content = styled(Row)`
   width: unset;
+  margin-right: 60px;
 `;
 export default CareerItem;

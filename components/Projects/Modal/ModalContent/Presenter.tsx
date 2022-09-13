@@ -26,6 +26,7 @@ const Presenter: React.FC<Props> = props => {
       onBeforeInit={onBeforeInit}
       initialSlide={0}
       onActiveIndexChange={onActiveIndexChange}
+      autoHeight={true}
     >
       {tabEnumArray.map(([value]) => (
         <SwiperSlide id={value} key={value}>
@@ -38,7 +39,11 @@ const Presenter: React.FC<Props> = props => {
 
 const StyledSwiper = styled(Swiper)`
   width: 100%;
-  height: 100%;
+  max-height: calc(100vh - 350px);
+
+  @media only screen and ${({ theme }) => theme.maxGrid2} {
+    max-height: calc(100vh - 198px);
+  }
 `;
 
 export default Presenter;

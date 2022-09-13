@@ -21,6 +21,7 @@ const TechItem: React.FC<Props> = props => {
 };
 
 const Wrapper = styled(Row)`
+  width: unset;
   padding: 10px 12px;
   background-color: ${({ theme }) => `${theme.color.orange}99`};
   border-radius: 4px;

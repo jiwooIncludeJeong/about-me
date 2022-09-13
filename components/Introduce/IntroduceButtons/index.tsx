@@ -1,8 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Row } from '@styles/default-styles';
-import { EmailIcon, GithubIcon, LinkedinIcon } from '@assets/icons';
-import { EMAIL, GITHUB_URL, LINKEDIN_URL } from '@constants/introduce';
+import { EmailIcon, GithubIcon, LinkedinIcon, VelogIcon } from '@assets/icons';
+import {
+  EMAIL,
+  GITHUB_URL,
+  LINKEDIN_URL,
+  VELOG_URL,
+} from '@constants/introduce';
 import IntroduceButtonItem from '@components/Introduce/IntroduceButtons/IntroduceButtonItem';
 
 interface Props {}
@@ -22,6 +27,10 @@ const IntroduceButtons: React.FC<Props> = props => {
       <IntroduceButtonItem
         href={`mailto:${EMAIL}`}
         renderIcon={() => <EmailIcon width={32} height={32} />}
+      />
+      <IntroduceButtonItem
+        href={VELOG_URL}
+        renderIcon={() => <VelogIcon width={32} height={32} />}
       />
     </Wrapper>
   );

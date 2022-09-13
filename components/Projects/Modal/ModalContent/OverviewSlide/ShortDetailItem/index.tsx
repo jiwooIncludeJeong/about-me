@@ -42,27 +42,7 @@ const Wrapper = styled(Row)`
 
   p {
     color: ${({ theme }) => theme.color.black};
-  }
-`;
-const A = styled.a`
-  position: relative;
-
-  ::after {
-    left: 0;
-    bottom: -12px;
-    position: absolute;
-    content: 'LINK';
-    padding: 6px 12px;
-    background-color: ${({ theme }) => theme.color.orange};
-    border-radius: 4px;
-    font-size: 12px;
-    font-family: Roboto;
-    font-weight: 500;
-    opacity: 0.6;
-  }
-  :hover::after {
-    opacity: 1;
-    transition: opacity 200ms ease-in-out;
+    word-break: break-word;
   }
 `;
 export default ShortDetailItem;

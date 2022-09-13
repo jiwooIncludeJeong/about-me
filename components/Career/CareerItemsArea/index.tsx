@@ -26,7 +26,7 @@ const CareerItemsArea: React.FC<Props> = props => {
   );
 };
 const CareerItemWrapper = styled(Col)<{ isFocused: boolean }>`
-  padding: 0 500px;
+  padding: 0 340px;
   width: 100%;
   opacity: ${({ isFocused }) => (isFocused ? 1 : 0)};
   transform: translateY(${({ isFocused }) => (isFocused ? 0 : '200px')});
