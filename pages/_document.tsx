@@ -33,6 +33,20 @@ export default class MyDocument extends Document {
       <Html>
         <Head>
           <link rel={'icon'} href={'/about-me/favicon.ico'} />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="preload"
+            as="style"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css"
+          />
         </Head>
         <body>
           <Main />
