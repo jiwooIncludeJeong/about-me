@@ -5,7 +5,7 @@ export const GlobalStyles = createGlobalStyle`
   body {
     padding: 0;
     margin: 0;
-    font-family:"Pretendard", "Roboto",-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    font-family: "Pretendard", "Roboto", "Magazine", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   }
 
