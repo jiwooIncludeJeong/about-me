@@ -2,9 +2,9 @@
 const isProduction = process.env.NODE_ENV === 'production';
 const nextConfig = {
   images:{
-    path:['https://jiwooincludejeong.github.io/about-me']
+    path:['https://jiwooincludejeong.github.io']
   },
-  assetPrefix: isProduction? 'https://jiwooincludejeong.github.io/about-me' : undefined,
+  assetPrefix: isProduction? 'https://jiwooincludejeong.github.io' : undefined,
   reactStrictMode: true,
   swcMinify: true,
   extends: [
