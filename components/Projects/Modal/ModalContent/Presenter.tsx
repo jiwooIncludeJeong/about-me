@@ -26,7 +26,6 @@ const Presenter: React.FC<Props> = props => {
       onBeforeInit={onBeforeInit}
       initialSlide={0}
       onActiveIndexChange={onActiveIndexChange}
-      autoHeight={true}
     >
       {tabEnumArray.map(([value]) => (
         <SwiperSlide id={value} key={value}>
