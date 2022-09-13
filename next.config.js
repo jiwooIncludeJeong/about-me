@@ -1,8 +1,10 @@
 /** @type {import('next').NextConfig} */
 const isProduction = process.env.NODE_ENV === 'production';
 const nextConfig = {
-  basePath: isProduction? '/about-me' : false,
-  assetPrefix: isProduction? '.' : undefined,
+  images:{
+    path:['https://jiwooincludejeong.github.io/about-me']
+  },
+  assetPrefix: isProduction? 'https://jiwooincludejeong.github.io/about-me' : undefined,
   reactStrictMode: true,
   swcMinify: true,
   extends: [

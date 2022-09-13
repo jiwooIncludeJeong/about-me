@@ -1,7 +1,10 @@
-{
-  "presets": ["next/babel"],
-  "plugins": [
+const env = require('./env-config')
+
+module.exports = {
+  presets: ["next/babel"],
+  plugins: [
     ["babel-plugin-styled-components", { "fileName": true, "displayName": true, "pure": true, "ssr": true}],
+    ["transform-define", env],
     [
       "module-resolver",
       {
