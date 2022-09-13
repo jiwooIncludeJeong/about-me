@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const isProduction = process.env.NODE_ENV === 'production';
 const nextConfig = {
-  assetPrefix:isProduction? '.':undefined,
+  assetPrefix:isProduction? '.' : undefined,
   reactStrictMode: true,
   swcMinify: true,
   extends: [
