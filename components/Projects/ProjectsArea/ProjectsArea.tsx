@@ -432,7 +432,9 @@ const ProjectsArea: React.FC<Props> = props => {
         {
           id: 1,
           title: '서울 열린 데이터 광장 OPEN API',
-          content: '',
+          content:
+            '지하철 실시간 위치, 지하철 역 별 정보, 지하철 역 간의 최소환승 경로를 알아야했습니다. ' +
+            '또한 각 지하철 역 별 foreign key로 사용할 id가 필요했습니다. 그래서 서울 열린 데이터 광장에서 제공하는 OPEN API를 사용하여 각 정보를 얻었습니다. ',
           type: ProjectDetailTypeEnum.EFFORT,
         },
       ],
