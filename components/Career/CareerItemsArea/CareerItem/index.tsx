@@ -78,5 +78,9 @@ const Duration = styled(Row)`
 const Content = styled(Row)`
   width: unset;
   margin-right: 60px;
+
+  @media only screen and ${({ theme }) => theme.maxGrid2} {
+    margin-right: 0;
+  }
 `;
 export default CareerItem;

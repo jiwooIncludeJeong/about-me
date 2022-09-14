@@ -162,7 +162,8 @@ const ProjectsArea: React.FC<Props> = props => {
           title: 'Storybook 도입',
           content:
             '디자이너와의 소통, 프론트엔드 개발자 내 소통을 위하여 자주 사용하는 컴포넌트를 약속한 Storybook을 작성하였습니다. ' +
-            '또한 디자이너도 개발된 컴포넌트를 보고 컴포넌트를 interaction 할 수 있도록 S3에 upload ➡️ AWS CloudFront ➡️ AWS Route53로 배포하였습니다. ',
+            '또한 디자이너도 개발된 컴포넌트를 보고 컴포넌트를 interaction 할 수 있도록 S3에 upload ➡️ AWS CloudFront ➡️ AWS Route53로 배포하였습니다. ' +
+            '또한 컴포넌트 기반으로 코드를 작성하는데에도 도움이 되었습니다.',
           link: 'https://storybook.shipdan.me/?path=/story/welcome--page',
           type: ProjectDetailTypeEnum.EFFORT,
         },
@@ -241,7 +242,26 @@ const ProjectsArea: React.FC<Props> = props => {
         '기존의 이메일, 스프레드 시트로 관리하던 프로세스를 어드민 시스템을 자체 개발 및 도입하여 리소스를 축소하기 위해 개발하였습니다.\n' +
         'Core UI의 무료 템플릿을 통해 개발을 진행하였고, 상태관리는 Recoil을 사용하였습니다. ' +
         '배포는 AWS S3에 upload ➡️ AWS CloudFront ➡️ AWS Route53으로 도메인 지정을 통해 진행하였습니다.',
-      detail: [],
+      detail: [
+        {
+          id: 0,
+          title: '패키지 내 아이콘 import',
+          content:
+            '백엔드에서 Core UI의 아이콘명을 string으로 프론트엔드에 전달합니다. 프론트엔드에서는 알맞은 아이콘을 아이콘명으로 매칭하여 사용하기 위하여 Core UI의 icons를 모두 import 했습니다.' +
+            '그랬더니 JS 번들의 파일 크기가 약 10MB 정도로 커져서 다운로드 시간이 굉장히 오래걸렸습니다. JS 번들 분할을 고려했지만 리소스가 부족하다고 판단하였습니다. ' +
+            'CDN을 찾아보려했으나 찾지 못하였고 다른 icon CDN을 찾아서 해결하였습니다. Awesome Font의 icon을 사용하기로 백엔드와 약속하고 진행하였습니다. 이후 Webpack Bundle Analyzer로 번들을 분석했습니다. ' +
+            '사용하지 않는 icon도 모두 import 되어 JS 번들의 크기가 커졌던 것을 알 수 있었습니다. CDN으로 변경하였을 때 JS 번들의 크기가 1MB 이하로 떨어져 사용자들에게 빠르게 화면을 보여줄 수 있었습니다. ',
+          type: ProjectDetailTypeEnum.DIFFICULTY,
+        },
+        {
+          id: 1,
+          title: 'Webpack Bundle Analyzer',
+          content:
+            'JS 번들을 분석하기 위해 설치하였습니다. 이를 통해 사용하지 않는 icon을 모두 import 했음을 알 수 있었습니다. 또한 Webpack5에서 지원하는 tree shaking이라는 것을 알고 ' +
+            'React-Native의 번들러에서는 tree shaking을 지원하지 않 Typescript의 enum 사용에 유의해야함을 알 수 있었습니다. 그래서 React-Native에서는 enum을 사용하지 않고 const를 선언하여 사용하였습니다.',
+          type: ProjectDetailTypeEnum.EFFORT,
+        },
+      ],
       duration: '2022.05 ~ NOW',
       iconImage: '',
       link: 'https://admin.shipdan.me/#/login',
@@ -267,7 +287,48 @@ const ProjectsArea: React.FC<Props> = props => {
         '카카오 맵 API를 사용하여 지도를 그렸고 browser의 geolocation API를 이용하여 현재 위치를 watching하였습니다. ' +
         '음악 검색은 last.FM API의 track 검색 API를 사용하여 진행하였습니다. ' +
         '절대적인 시간이 부족하여 모든 기획을 개발로 진행하지 못한 점이 아쉽습니다.',
-      detail: [],
+      detail: [
+        {
+          id: 0,
+          title: '프로젝트 세팅 시간 절약을 위한 보일러플레이트',
+          content:
+            'Next.js, Typescript, eslint, prettier, babel을 세팅한 프로젝트 보일러플레이트를 생성했습니다. 항상 첫 프로젝트는 세팅하는데 많은 시간이 걸렸습니다. ' +
+            '이 시간을 절약하면 효율적일 것 같다고 생각하여 평소 보일러플레이트를 git hub에 생성해두고 clone하여 사용합니다. 함께 협업하는 프론트 엔드 개발자 분도 같은 환경에서의 작업이 익숙하다고 하였습니다.' +
+            ' 시간이 부족한 해커톤 특성 상 해당 보일러플레이트를 활용하면 다른 곳에 시간을 사용할 수 있을 것 같아 사용하였습니다. 그로 인해 다른 작업에 많은 시간을 사용할 수 있었고 ' +
+            '함께 협업한 개발자분도 만족을 표했습니다.',
+          link: 'https://github.com/jiwooIncludeJeong/init_nextjs',
+          type: ProjectDetailTypeEnum.EFFORT,
+        },
+        {
+          id: 1,
+          title: '협업을 위한 컨벤션 정하기',
+          content:
+            '다른 개발자분은 어떠한 방식으로 코딩하는지 배우고자 하는 목적으로 다른 개발자분의 컨벤션을 많이 적용하여 개발하였습니다. Styled Component를 최상단에 감싸고 ' +
+            '클래스명 선택자로 스타일을 적용하는 것이 같은 코드의 반복이 많다는 점에서 컴포넌트를 재활용하기에 좋지 않다고 생각하였습니다. 그럼에도 불구하고 스스로 부족하다고 생각하는 ' +
+            '선택자를 공부할 수 있을 것 같아 컨벤션을 수용하였습니다. 프로젝트를 마치고 협업한 개발자분께 제가 느낀 컨벤션의 부정적인 면에 대해 토의하였습니다. 그 분은 재활용할 때 컴포넌트로 변경한다고 말씀하셨고, ' +
+            '저도 일정부분 이해할 수 있었습니다. 프론트엔드 개발자와의 협업과 토의하는 과정이 정말 즐겁게 느껴졌습니다.',
+          type: ProjectDetailTypeEnum.EFFORT,
+        },
+        {
+          id: 3,
+          title: '카카오 맵 Open API',
+          content:
+            '위치기반 서비스 특성 상, 지도 API를 사용해야했습니다. 카카오 로그인 기능을 사용할 것이라 카카오 맵 API를 사용하였습니다. ' +
+            '지도 관련 서비스는 처음이라 overlay를 커스텀하는데 어려움이 있었습니다. overlay를 html형식의 string으로 커스텀해야했는데 이를 위해 css를 만들어 _app.tsx에서 import 하였습니다. ' +
+            '또한 overlay를 상태에 따라 onclick 함수가 다른데 카카오 맵은 js로 동작하기 때문에 state가 없어 hook 내에서 처리하였습니다. ' +
+            '현재 위치를 알기 위해 geolocation API의 watchPosition을 사용하였는데 이것이 재렌더링을 많이 일으켜 현재 위치는 RefObject로 처리하였습니다. 하지만 너무 많은 state가 엉켜있고, hook 간의 의존도가 높아' +
+            ' 상태관리를 더 잘할 수 있는 여지가 남은 것 같아 아쉽습니다.',
+          type: ProjectDetailTypeEnum.DIFFICULTY,
+        },
+        {
+          id: 4,
+          title: '한 페이지 내 모달 처리',
+          content:
+            'hook 간의 의존도가 높아 상태관리에 어려움이 있었지만, 앱과 같은 사용자 경험을 위해 페이지 간 이동을 animation modal로 처리한 부분이 개인적으로는 아쉽습니다. 이로 인해 한 페이지 내에서 너무 많은 state가 선언되었고 ' +
+            'modal이 열리고 닫힐 때마다 useEffect의 dependency에 open state를 처리해줘야하는 보일러플레이트가 생겨서 아쉽다고 느꼈습니다.',
+          type: ProjectDetailTypeEnum.DIFFICULTY,
+        },
+      ],
       duration: '2022.09 ~ 2022.09',
       iconImage: '',
       github: 'https://github.com/CU-Team/front-end',
@@ -296,7 +357,38 @@ const ProjectsArea: React.FC<Props> = props => {
         '라이브를 제외한 대부분의 기능을 개발했으며, 동영상 플레이어 기능을 전담하여 개발하였습니다. ' +
         '특히 이 부분에서 React의 state의 변화로 인한 re-rendering 개념이 부족하여 동영상의 실행시간을 state로 선언하여 성능 이슈를 발생 시켜 어려움을 겪었습니다. ' +
         'useRef의 용도를 깨닫고 변경한 후 팀원들에게 훨씬 나은 사용성과 좋은 UI를 개발하였다는 칭찬을 받았던 기억이 남는 프로젝트입니다.',
-      detail: [],
+      detail: [
+        {
+          id: 0,
+          title: '미디어 플레이어 상태관리',
+          content:
+            'React의 state의 개념이 부족할 당시에 VOD 동영상 플레이어 부분의 개발을 맡았습니다. 그래서 미디어의 현재 실행 시간을 state로 관리하였고 useEffect의 dependency에 해당 state가 ' +
+            '있는 부분이 많았습니다. 이로 인해 성능 이슈가 발생하였고 QA 과정에서 롤백이 결정되었습니다. React 공식 문서를 통해 useState와 useRef를 공부하였습니다. ' +
+            '기존의 state를 ref로 변경하였고 state 변화가 필요한 부분만 state로 사용하였습니다. 또한 재렌더링이 필요한 부분인 미디어플레이어에서 현재 재생 시간, 남은 시간 등에 대해서는 ' +
+            '컴포넌트를 따로 생성하여 해당 컴포넌트만 재렌더링이 발생하도록 처리하여 성능 이슈를 해결하였습니다. 그로 인해 변경한 동영상 플레이어가 프로덕트에 반영될 수 있었습니다.',
+          type: ProjectDetailTypeEnum.DIFFICULTY,
+        },
+        {
+          id: 2,
+          title: 'Container - Presenter 패턴으로 리팩터링',
+          content:
+            '기존의 프로젝트는 하나의 파일에 로직을 구현하는 부분과 화면에 보여지는 부분을 포함한 구조였습니다. 이를 Container - Presenter 패턴을 적용하였습니다. ' +
+            'Container에서는 데이터의 사용 및 조작, 비즈니스 로직 구현 등을 담당하였고 Presenter는 화면에 보여지는 부분과 사용자와 상호작용하는 부분을 담당하여 분리하였습니다. ' +
+            '관심사의 분리를 만들 수 있었고, 코드의 변경이 필요할 때 알맞은 곳을 수정할 수 있었습니다.',
+          type: ProjectDetailTypeEnum.EFFORT,
+        },
+        {
+          id: 3,
+          title: 'MP4 vs GIF',
+          content:
+            '움직이는 이미지를 화면에 보여주는 기획이 있었습니다. 디자이너님이 GIF 확장자 파일을 주셨습니다. 이는 파일의 크기가 너무 커 ' +
+            '화면에 보여지는 데까지 시간이 오래 걸렸습니다. 저는 GIF를 WEBP 확장자로 변경하였지만 이 또한 모든 GIF를 일일이 변경하기에는 시간이 많이 들었습니다. ' +
+            '동영상의 경우에는 최소 버퍼가 다운로드 되면 미디어가 실행된다는 점을 알고 디자이너님께 MP4 확장자로 변환을 요청하여 사용자에게 빠르게 보여줄 수 있도록 변경하였습니다. ' +
+            '또한 최소 버퍼를 작게 설정하여 더욱 빠르게 사용자에게 미디어를 제공하였습니다. 동영상 버퍼에 대해 알 수 있었습니다.',
+          link: '/pdfs/dash-and-buffer.pdf',
+          type: ProjectDetailTypeEnum.DIFFICULTY,
+        },
+      ],
       duration: '2021.02 ~ 2022.01',
       iconImage: '',
       link: '',
@@ -326,7 +418,24 @@ const ProjectsArea: React.FC<Props> = props => {
         '백엔드 없이 서울 열린 데이터 광장의 실시간 지하철 위치정보 API, 최소환승 경로 API, 지하철 정보 API 세가지 공개 API를 활용하여 개발하였습니다. ' +
         '음성인식은 React-Native-Voice를 활용하였고, 음성출력은 React-Native-TTS를 활용하였습니다.\n' +
         '해당 프로젝트로 숭실대학교에서 주최한 제 11회 숭실 캡스톤 디자인 경진대회 은상을 수상하였습니다.',
-      detail: [],
+      detail: [
+        {
+          id: 0,
+          title: 'React-Native-Beacon 패키지와의 Dependency 문제',
+          content:
+            'React-Native 0.63 버전을 사용하여 개발하였습니다. 하지만 Beacon과의 통신을 위해 사용하는 React-Native-Beacon 패키지의 안드로이드 버전' +
+            ' Dependency가 React-Native 0.63 버전과 맞지 않아 build를 할 때마다 오류가 발생하였습니다. 최초에는 node_modules 내 React-Native-Beacon ' +
+            '패키지를 직접 수정하여 build 오류를 해결하였으나 새로운 npm 패키지를 설치 혹은 npm install할 때마다 수정해야하는 번거로움이 있었습니다.' +
+            ' 검색을 통해 package-patch 패키지의 존재를 알고 npm 실행에 관계 없이 node_modules 내 수정한 코드가 변경되지 않도록 하여 문제를 해결했습니다. ',
+          type: ProjectDetailTypeEnum.DIFFICULTY,
+        },
+        {
+          id: 1,
+          title: '서울 열린 데이터 광장 OPEN API',
+          content: '',
+          type: ProjectDetailTypeEnum.EFFORT,
+        },
+      ],
       github:
         'https://github.com/jiwooIncludeJeong/Subway_Service_for_VisuallyImpaired/tree/master',
       duration: '2021.06 ~ 2021.08',
