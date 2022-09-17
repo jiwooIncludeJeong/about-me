@@ -30,7 +30,13 @@ const Wrapper = styled.div<{ isFocused: boolean }>`
   transform: translateY(${({ isFocused }) => (isFocused ? 0 : '200px')});
   transition: opacity 200ms ease, transform 200ms ease;
 
-  @media only screen and ${props => props.theme.maxGrid3} {
+  @media only screen and ${props => props.theme.maxGrid5} {
+    padding: 0 40px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @media only screen and ${props => props.theme.maxGrid3} and ${props =>
+      props.theme.minGrid5} {
     padding: 0 40px;
     grid-template-columns: repeat(2, 1fr);
   }

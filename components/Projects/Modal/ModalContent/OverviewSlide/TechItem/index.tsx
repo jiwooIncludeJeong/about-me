@@ -43,6 +43,7 @@ const Wrapper = styled(Row)`
 
   @media only screen and ${({ theme }) => theme.maxGrid2} {
     padding: 4px 8px;
+    margin-bottom: 12px;
   }
 `;
 

@@ -79,6 +79,10 @@ const Content = styled(Row)`
   width: unset;
   margin-right: 60px;
 
+  p {
+    text-align: right;
+  }
+
   @media only screen and ${({ theme }) => theme.maxGrid2} {
     margin-right: 0;
   }

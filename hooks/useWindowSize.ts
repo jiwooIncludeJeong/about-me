@@ -8,6 +8,7 @@ const useWindowSize = () => {
   });
   const isTablet = windowSize.width < size.grid2;
   const isMobile = windowSize.width < size.grid3;
+  const isGrid5 = windowSize.width < size.grid5;
 
   const { width } = windowSize;
   const { height } = windowSize;
@@ -34,6 +35,7 @@ const useWindowSize = () => {
     height,
     isTablet,
     isMobile,
+    isGrid5,
   };
 };
 

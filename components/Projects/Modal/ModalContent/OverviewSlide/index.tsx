@@ -66,7 +66,7 @@ const Wrapper = styled(Col)`
   padding: 24px 48px;
 
   @media only screen and ${({ theme }) => theme.maxGrid2} {
-    padding: 12px 24px;
+    padding: 12px 20px;
   }
 `;
 export default OverviewSlide;

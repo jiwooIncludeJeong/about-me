@@ -36,7 +36,12 @@ const Wrapper = styled(Col)`
   width: 200px;
   transition: all ease 500ms;
 
-  @media only screen and ${props => props.theme.maxGrid2} {
+  @media only screen and ${props => props.theme.maxGrid5} {
+    width: 200px;
+  }
+
+  @media only screen and ${props => props.theme.maxGrid2} and ${props =>
+      props.theme.minGrid5} {
     width: 150px;
   }
 

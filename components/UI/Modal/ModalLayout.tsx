@@ -53,8 +53,12 @@ const Outer = styled.div<{ show: boolean }>`
   transition: opacity 200ms ease-in-out;
   z-index: ${props => (props.show ? 2 : -1)};
 
-  @media only screen and ${props => props.theme.maxGrid2} {
+  @media only screen and ${props => props.theme.maxGrid2} and ${props =>
+      props.theme.minGrid5} {
     padding: 40px;
+  }
+  @media only screen and ${props => props.theme.maxGrid5} {
+    padding: 12px;
   }
 `;
 
@@ -76,7 +80,7 @@ const Top = styled(Row)`
   }
 
   @media only screen and ${({ theme }) => theme.maxGrid2} {
-    padding: 12px 20px;
+    padding: 16px 20px;
   }
 `;
 export default ModalLayout;
