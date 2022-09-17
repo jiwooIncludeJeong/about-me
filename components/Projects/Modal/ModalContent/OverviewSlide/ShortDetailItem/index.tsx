@@ -27,7 +27,7 @@ const ShortDetailItem: React.FC<Props> = props => {
       >
         {stringArr.map((value, index) => (
           <React.Fragment key={`${value}_${index}`}>
-            {value}
+            •{value}
             <br />
           </React.Fragment>
         ))}
