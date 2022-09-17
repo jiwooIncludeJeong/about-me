@@ -44,8 +44,8 @@ export default class MyDocument extends Document {
           />
           <link
             rel="stylesheet"
-            type="text/css"
-            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css"
+            as="style"
+            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.5/dist/web/static/pretendard.css"
           />
         </Head>
         <body>
