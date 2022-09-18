@@ -26,6 +26,9 @@ export interface ProjectDetailType {
   content: string;
   link?: string;
   type: ProjectDetailTypeEnum;
+  difficulty?: string;
+  effort?: string;
+  result?: string;
 }
 
 export interface TechType {

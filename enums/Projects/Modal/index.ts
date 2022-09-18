@@ -1,7 +1,8 @@
 export enum ProjectModalTabEnum {
   OVERVIEW = 'OVERVIEW',
-  EFFORT = 'EFFORT',
-  DIFFICULTY = 'DIFFICULTY',
+  DETAIL = 'DETAIL',
+  // EFFORT = 'EFFORT',
+  // DIFFICULTY = 'DIFFICULTY',
 }
 
 export enum ProjectDetailTypeEnum {

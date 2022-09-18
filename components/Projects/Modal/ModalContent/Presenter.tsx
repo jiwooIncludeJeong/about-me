@@ -40,8 +40,12 @@ const StyledSwiper = styled(Swiper)`
   width: 100%;
   max-height: calc(100vh - 350px);
 
-  @media only screen and ${({ theme }) => theme.maxGrid2} {
-    max-height: calc(100vh - 198px);
+  @media only screen and ${({ theme }) => theme.maxGrid5} {
+    max-height: calc(100vh - 160px);
+  }
+  @media only screen and ${({ theme }) => theme.maxGrid2} and ${({ theme }) =>
+      theme.minGrid5} {
+    max-height: calc(100vh - 208px);
   }
 `;
 

@@ -13,6 +13,7 @@ import type SwiperCore from 'swiper';
 import OverviewSlide from '@components/Projects/Modal/ModalContent/OverviewSlide';
 import DifficultySlide from '@components/Projects/Modal/ModalContent/DifficultySlide';
 import EffortsSlide from '@components/Projects/Modal/ModalContent/EffortSlide';
+import DetailSlide from '@components/Projects/Modal/ModalContent/DetailSlide';
 
 const TabComponent = Tab as TabComponentInterface<ProjectModalTabEnum>;
 
@@ -59,10 +60,8 @@ const Presenter: React.FC<Props> = props => {
             switch (enumValue) {
               case ProjectModalTabEnum.OVERVIEW:
                 return <OverviewSlide modalData={modalDataProps} />;
-              case ProjectModalTabEnum.EFFORT:
-                return <EffortsSlide modalData={modalDataProps} />;
-              case ProjectModalTabEnum.DIFFICULTY:
-                return <DifficultySlide modalData={modalDataProps} />;
+              case ProjectModalTabEnum.DETAIL:
+                return <DetailSlide modalData={modalDataProps} />;
               default:
                 return <></>;
             }
@@ -93,5 +92,4 @@ const Wrapper = styled(Col)`
 const Top = styled(Row)`
   justify-content: space-between;
 `;
-const ContentWrapper = styled.div``;
 export default Presenter;
