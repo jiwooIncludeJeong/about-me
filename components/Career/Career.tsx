@@ -24,8 +24,13 @@ const Career: React.FC<Props> = props => {
 
   const [items, setItems] = useState<Array<CareerItemType>>([
     {
+      id: 11,
+      duration: '2022.11 ~ NOW',
+      content: 'Whitecube Front End Developer',
+    },
+    {
       id: 0,
-      duration: '2021.08 ~ NOW',
+      duration: '2021.08 ~ 2022.10',
       content: 'Bunkerkids Front End Developer',
     },
     {
