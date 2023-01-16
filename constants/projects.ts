@@ -69,11 +69,11 @@ export const PROJECTS: Array<ProjectType> = [
   {
     id: 13,
     title: {
-      kr: 'awran5/react-simple-star-rating 기여',
-      en: 'contribute awran5/react-simple-star-rating',
+      kr: '오픈 라이브러리 기여',
+      en: 'Contribute react-simple-star-rating',
     },
     subTitle:
-      'github repository awran5/react-simple-star-rating issue를 찾아 기여',
+      'github repository awran5/react-simple-star-rating의 SSR issue를 찾아 기여',
     shortDetail:
       '기존에 사용하던 react의 별점 관련 라이브러리를 Next.js에서 사용하는 중 이슈를 발견.\n' +
       '이슈를 해결하여 Pull Request를 올려 Merge되어 Contributor로써 기여함.',
