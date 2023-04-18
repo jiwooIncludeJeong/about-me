@@ -28,6 +28,7 @@ export const PROJECTS: Array<ProjectType> = [
       //   effort: '',
       //   result: '',
       // },
+
       {
         id: 1,
         title: '디자인 시스템 npm package 자동 배포 환경 구축',
