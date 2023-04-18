@@ -11,48 +11,61 @@ export const PROJECTS: Array<ProjectType> = [
     subTitle:
       '몸과 마음이 건강해지는 습관 만들기.' +
       '대한민국 1등 건강습관 앱, 챌린저스 \n 앱 개발',
-    shortDetail: '',
+    shortDetail:
+      'React Native를 통한 앱 개발, Next.js를 통한 웹 개발\n' +
+      '개발 그룹 내의 효율적인 개발 경험을 위해 디자인 시스템 NPM Package CI/CD 구현 및 master 브랜치 병합 시 태깅 자동화 구축\n' +
+      'React Native의 Native Module을 통한 React Native iOS 위젯 설계 및 개발\n' +
+      '일의 범위를 주도적으로 확장해 나가는 메이커적인 성향으로 팀에 기여',
     detail: [
-      {
-        id: 0,
-        title:
-          'polling update 최적화를 위한 rxjs를 통해 이벤트 기반 data fetching 구현',
-        content: '',
-        type: ProjectDetailTypeEnum.EFFORT,
-        difficulty: '',
-        effort: '',
-        result: '',
-      },
+      // {
+      //   id: 0,
+      //   title:
+      //     'polling update 최적화를 위한 RXJS를 통해 이벤트 기반 data fetching 구현',
+      //   content:
+      //     'polling update를 위해 10초에 한 번 API Call하는 상황을 RXJS의 filter를 통해 불필요한 API Call을 줄임.',
+      //   type: ProjectDetailTypeEnum.EFFORT,
+      //   difficulty: '',
+      //   effort: '',
+      //   result: '',
+      // },
       {
         id: 1,
-        title: '디자인 시스템 npm package 자동 배포 추가',
-        content: '',
+        title: '디자인 시스템 npm package 자동 배포 환경 구축',
+        content:
+          '커밋이 main 브랜치에 병합될 때 자동으로 npm package를 배포하는 CI/CD Github Action 구축',
         link: 'https://velog.io/@jt_include_rw/NPM-%ED%8C%A8%ED%82%A4%EC%A7%80-%EB%B0%B0%ED%8F%AC-%EC%9E%90%EB%8F%99%ED%99%94-wGithub-Action',
         type: ProjectDetailTypeEnum.EFFORT,
-        difficulty: '',
-        effort: '',
-        result: '',
-      },
-      {
-        id: 2,
-        title: 'core module npm package로 분리를 통한 UI와 로직 분리',
-        content: '',
-        type: ProjectDetailTypeEnum.EFFORT,
-        difficulty: '',
-        effort: '',
-        result: '',
+        difficulty:
+          '다른 npm package로 디자인 시스템을 개발/사용하는데, main 브랜치에 병합 후 매번 배포하는 과정을 팀원들이 번거로워 하였음.',
+        effort:
+          'Github Action을 통해 main 브랜치에 병합될 때 npm package를 자동으로 배포하는 CI/CD 환경 구축. 또한 배포 결과를 Slack 웹훅으로 전달하여 결과를 확인할 수 있도록 함.',
+        result:
+          '디자인 시스템을 매번 배포하는 과정이 사라져 팀원들의 개발 경험에 긍정적인 영향을 미침.',
       },
       {
         id: 3,
         title:
-          'Native 모듈을 활용한 랜선 대회를 통해 순이익 약 4,000만원의 기능 개발',
-        content: '',
-        link: 'https://digitalchosun.dizzo.com/site/data/html_dir/2022/12/20/2022122080065.html',
+          'React Native의 Native Module을 활용한 React Native iOS 위젯 개발',
+        content:
+          'iOS 위젯 개발을 위해 React Native와 iOS 간의 Native Module 설계 및 개발',
+        link: 'https://velog.io/@jt_include_rw/series/React-Native-iOS-Widget',
         type: ProjectDetailTypeEnum.EFFORT,
-        difficulty: '',
-        effort: '',
-        result: '',
+        difficulty:
+          '설계 시, 앱에서 변화하는 데이터에 의해 위젯의 값을 변경해주기 위해 Timeline, Observable 객체를 활용한 설계를 하였으나 원하는 대로 동작하지 않음.',
+        effort: 'WidgetCenter의 reloadAllTimelines()를 활용하여 구현.',
+        result:
+          'React Native iOS 위젯을 구현. 하지만 Background Fetching을 통해 자정마다 데이터를 refetch하는 방식에 대해서는 더 고민해볼 필요가 있음.',
       },
+      // {
+      //   id: 4,
+      //   title: 'main 브랜치 병합 시, 커밋 릴리즈 버전 태깅 자동화',
+      //   content:
+      //     '버전 관리를 위해 Github Action을 통해 main 브랜치 병합 시, 릴리즈 버전 태깅 자동화',
+      //   type: ProjectDetailTypeEnum.EFFORT,
+      //   difficulty: '',
+      //   effort: '',
+      //   result: '',
+      // },
     ],
     iosLink: 'https://apps.apple.com/kr/app/id1438855824',
     androidLink:
@@ -64,6 +77,8 @@ export const PROJECTS: Array<ProjectType> = [
       { id: 1, name: 'React-Query' },
       { id: 2, name: 'Redux' },
       { id: 3, name: 'Typescript' },
+      { id: 4, name: 'iOS Widget' },
+      { id: 5, name: 'Next.js' },
     ],
   },
   {
